@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Model Viewer</title>
+  <link rel="stylesheet" href="stylesheet.css">
+<!--  This JavaScript Code is not mine and i don't understand how it work as it is very advanced
+      It was taken from: https://modelviewer.dev/ This is developed by Google and anyone can use it
+      I had to copy the whole code to a different file as Partch does not allow me to link out to external code
+      But the source for the JavaScript is: https://unpkg.com/@google/model-viewer@2.0.2/dist/model-viewer.min.js -->
+  <script type="module" src="model-view.js"></script>
+  <!--    <link rel="stylesheet" href="https://use.typekit.net/nvs2mys.css">-->
+</head>
+<!-- TODO: Fix grammar -->
+<body>
+<header>
+  <nav class = "nav">
+    <!--        Making sure all elements have a class so it easier to understand for me-->
+    <ul class = "nav_list">
+      <li class = "nav-list-item"><a href="Home.html">Home</a> </li>
+      <li class = "nav-list-item"><a href="Passion.html">About Me</a>
+        <!--                Nested list for the dropdown done in css. Hidden when not hovered over via the :hover ability
+        in css-->
+        <ul class = "dropdown">
+          <li><a href="Passion.html">About Me</a> </li>
+          <li><a href="Resume.html">Resume</a> </li>
+          <li><a href="Reflection.html" >Reflection</a></li>
+        </ul>
+      </li>
+      <li class = "nav-list-item"><a href="Home.html">Kyle Robertson</a> </li>
+      <li class = "nav-list-item"><a href="Portfolio.html">Portfolio</a>
+        <ul class = "dropdown">
+          <li><a href="Work.html">Work</a> </li>
+          <li><a href="photography.html">Photography</a> </li>
+          <li><a href="creative.html">Creative</a></li>
+        </ul>
+      </li>
+      <li class = "nav-list-item"><a href="Form.html">Contact Me</a>
+        <ul class = "dropdown">
+          <li><a href="Form.html">Form</a> </li>
+          <li><a href="social-media.html">Social Media</a> </li>
+        </ul>
+      </li>
+    </ul>
+
+  </nav>
+</header>
+<div id = "page-container">
+  <div id = "wrapper">
+    <div class = "viewer">
+      <h1>3D Model Viewer</h1>
+      <p>This is a 3D model that I created for one of my design classes
+          <br>
+          If you want a further description <a href="Work-Pages/Bible.html">go here</a>
+        <br>
+          The viewer was created by Google, the link for more information is <a href="https://modelviewer.dev/">https://modelviewer.dev/</a>
+        <br>
+          This does take a while to load, due to the file size of the 3D model.
+
+      </p>
+    <model-viewer src = "BackDrop.glb" camera-controls></model-viewer>
+      </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <footer class="footer">
+    <a href="mailto:u6671630@anu.edu.au">Contact Me</a>
+    <a href="https://www.instagram.com/kylerobertson_98/">
+      <img src="Instagram.svg" class = "insta" alt = "Instagram Logo">
+    </a>
+    <div class="footer-links">
+      <a href="Source-log.html">Source Log</a>
+      <a href="sitemap.html">Site Map</a>
+    </div>
+  </footer>
+</div>
+
+
+
+</body>
+</html>

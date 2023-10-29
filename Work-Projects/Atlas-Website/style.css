@@ -1,0 +1,1112 @@
+/*
+Global CSS:
+*/
+
+h1 {
+    font-family: kings-caslon, sans-serif;
+    color: #4A4B47;
+}
+
+h2 {
+    font-family: kings-caslon, sans-serif;
+    color: #4A4B47;
+}
+
+h3 {
+    font-family: kings-caslon, sans-serif;
+    color: #4A4B47;
+}
+
+footer {
+    text-align: center;
+}
+
+p {
+    font-family: kings-caslon, sans-serif;
+    color: #4A4B47;
+}
+
+html, body {
+    height: 100%;
+}
+
+main {
+    text-align: center;
+}
+
+p {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/*
+Nav Bar CSS
+*/
+
+.nav-item {
+    margin: 1vw;
+    /*selected font from Abode XD*/
+    font-family: kings-caslon-display, serif;
+    /*Responsive Text size for the nav bar, to make it look better on larger screens*/
+    /*font-size: 20px;*/
+    font-size: 2.2vh;
+    /*font-size: 1.05vw;*/
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: #4A4B47;
+}
+
+/*Adding the line in between each word/link to each page*/
+.vert-line {
+    border-right: 0.125vw solid #707070;
+    height: 2.5vh;
+}
+
+nav a {
+    /*used to display the list in a line, and in the middle of the nav*/
+    display: inline-block;
+    vertical-align: middle;
+    /*border: 1px solid blue;*/
+}
+
+.selected {
+    /*Underlining the current item, by just adding a border to the bottom of the text
+    and changing the colour of it.*/
+    color: #335D3C;
+    font-family: kings-caslon-display, serif;
+    border-bottom: 2.5px solid #335D3C;
+}
+
+nav ul {
+    /*Font is size zero to remove whitespace that appears in firefox*/
+    font-size: 0px;
+    padding-left: 1vw;
+    /*This padding is needed because for some reason there is a 40px padding-left that
+    i cannot find the cause of*/
+    text-align: center;
+}
+
+li {
+    /*used to display the list in a line, and in the middle of the nav*/
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.svg {
+    /*Make the logo responsive for different sizes screens*/
+    width: 1.4vw;
+    height: 3.1vh;
+}
+
+/*
+Home Page CSS
+*/
+
+.home {
+    /*the background gradient of the home page*/
+    background: linear-gradient(#E2E2DF, #0F0F0E) fixed;
+}
+
+/*Testing Line, vertical line in the middle of the page*/
+body {
+    /*background: linear-gradient(#000, #000) no-repeat center/2px 100%;*/
+}
+
+body {
+    background-color: #E2E2DF;
+    margin: 0;
+}
+
+.home-main {
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.home-desktop-svg {
+    /*Setting the max size of the SVG, so on larger screens it stays the same size*/
+    max-width: 665px;
+    max-height: 727px;
+    width: 100vw;
+}
+
+.info-container {
+    /*Used flex as it does not need to be in a grid just, next to each other and flex,
+    fills this role well.*/
+    display: flex;
+    /*Centres the content, then aligns it on the baseline of the heading*/
+    justify-content: center;
+    align-items: baseline;
+    gap: 5vw;
+}
+
+#home-hrs {
+    /*Setting the font & colour, that will only exist on the home page*/
+    font-family: kings-caslon, sans-serif;
+    color: #CECFC9;
+
+}
+
+#home-hrs strong {
+    /*Just making sure the font is correct, with the correct weight*/
+    font-weight: 700;
+}
+
+#home-address {
+    /*Setting the font & colour, that will only exist on the home page*/
+    font-family: kings-caslon, sans-serif;
+    color: #CECFC9;
+    font-style: normal;
+}
+
+#home-address strong {
+    font-weight: 700;
+}
+
+.footer-icons {
+    margin: 0 0.25vw;
+    text-decoration: none;
+}
+
+
+/*
+Footer CSS
+*/
+/*Making sure the footer is stuck the bottom of the page and allows it scroll*/
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+footer .hrs {
+    /*Just mainly setting the font and colour of the text in the bottom of the page*/
+    background-color: #D9D9D4;
+    font-family: kings-caslon, sans-serif;
+    color: #4A4B47;
+    font-size: 18px;
+    /*Adding the spacing between the elements, making it responsive so it looks good on
+    different size screens*/
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+}
+
+footer .address {
+    /*Just mainly setting the font and colour of the text in the bottom of the page*/
+    font-family: kings-caslon, sans-serif;
+    color: #4A4B47;
+    font-size: 18px;
+    background-color: #CFCFC9;
+    padding: 1vh 0;
+}
+
+footer .social-icons {
+    background-color: #CFCFC9;
+    padding-bottom: 1vh;
+}
+
+/*
+Contact Page CSS
+*/
+/*The main grid for organising the page, There are 4 columns so the image can take 3 of column
+by the span 3 line, could have also done 3fr to 1fr*/
+.contact-grid {
+    margin: 0 25vw 2vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.image-container {
+    /*Making the image/container take up three columns*/
+    grid-column: span 3;
+}
+
+.contact-p {
+    /*setting the text to the centre of the div*/
+    text-align: center;
+}
+
+.contact-addy {
+    /*Making sure the address is in normal font*/
+    font-style: normal;
+}
+
+.contact-info {
+    /*This is the flex that lives inside the grid, for the text content of the
+    page. Flex works the best as i just needed the content in a line, which flex can
+    do well*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #4A4B47;
+    font-family: kings-caslon, sans-serif;
+}
+
+.contact-image {
+    height: 43.1vh;
+    width: 100%;
+    /*Making the image is centred and not just showing a random part of the image
+    as the image is quite large*/
+    background-position: center;
+    background-size: cover;
+    /*link to the image, in the folders*/
+    background-image: url("Images/ContactImage.jpg");
+}
+
+.google-map {
+    /*setting the container for the image size*/
+    height: 54vh;
+    /*Just adding padding to the left to offset to the side a bit*/
+    margin-left: 8vw;
+}
+
+.map-image {
+    /*Again setting max size so it doesn't get to big while allowing it to be responsive*/
+    width: 52vw;
+    height: 54vh;
+    max-height: 500px;
+    max-width: 1000px;
+}
+
+.contact-image2 {
+    /*Set a max size for the image so it does not get bigger than this, but making it
+    responsive for smaller screens*/
+    height: 97vh;
+    max-height: 900px;
+    width: 50%;
+    /*same reason as above*/
+    background-position: center;
+    background-size: cover;
+    background-image: url("Images/ContactImage2.jpg");
+    /*Centering the image and adding margin to the top and bottom*/
+    margin: 2.6vh auto;
+}
+
+/*
+About Page CSS
+*/
+.main-txt {
+    /*Making the size responsive by using %*/
+    width: 34%;
+    /*border: 1px solid black;*/
+    /*Centring the section, the margin centres the section and the text-align, centres
+    the text of the section */
+    text-align: center;
+    margin: 0 auto;
+}
+
+.main-txt p {
+    /*Just setting the font of the <p>*/
+    font-family: kings-caslon, sans-serif;
+    color: #4A4B47;
+}
+
+.gallery-images {
+    /*Centring the images in the div*/
+    /*width:65%;*/
+    margin: 0 auto;
+    /*Setting the size to be responsive and max size*/
+    width: 61vw;
+    max-width: 1074px;
+    /*border: 1px solid purple;, testing code,*/
+    /*Grid system to organise the images, all use the 1fr so they are the same size*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /*grid-template-columns: auto auto auto auto;*/
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    /*setting the row and column gap*/
+    grid-gap: 1em;
+}
+
+.gallery {
+    margin-bottom: 3vh;
+}
+
+.g-img {
+    /*Just setting the size of the images, to make them responsive and have a max size*/
+    width: 100%;
+    max-width: 265px;
+    height: 100%;
+    max-height: 265px;
+    border: 1px solid #4A4B47;
+}
+
+.gallery-images a {
+    /*Just matching the container to the image size, so there is no whitespace*/
+    width: 100%;
+    max-width: 265px;
+    height: 100%;
+    max-height: 265px;
+
+}
+
+/*
+News Page Css
+*/
+.news {
+    text-align: center;
+}
+
+.news ul {
+    /*removing the padding that exists from the nav bar*/
+    padding-left: 0px;
+}
+
+.news-article {
+    /*Setting the grid that is used to place the image and text next to each other, only
+    2 columns as there are only 2 elements in each article, the image div and the text div
+    then each div has their own styling*/
+    width: 21vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2em auto;
+}
+
+.news-article h3 {
+    /*removing the margin and the underline from the hyperlink*/
+    margin: 0px;
+    text-decoration: underline;
+}
+
+.news-article .inner-flex {
+    /*Setting the flex that is used to organise the text, space-around gives the same
+    spacing for around each element, so the gap is the same between each element. Also
+    achieved by the gap line*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 6px;
+    /*Centring the element in the div*/
+    align-items: center;
+}
+
+.RD-button {
+    /*The design for the read more button*/
+    display: inline-block;
+    padding: 0.25em 0;
+    width: 50%;
+    border: 2px solid #4A4B47;
+    border-radius: 3px;
+    text-decoration: none;
+    text-align: center;
+    font-family: kings-caslon, sans-serif;
+    color: #4A4B47;
+    font-weight: bold;
+}
+
+.article-info {
+    font-size: 15px;
+}
+
+.article-date {
+    font-size: 14px;
+}
+
+.inner-flex a {
+    text-decoration: none;
+}
+
+.news-article img {
+    /*Setting width and height but making sure it doesn't go above a certain size*/
+    width: 9.2vw;
+    max-width: 175px;
+    height: 9.2vw;
+    max-height: 175px;
+}
+
+/*
+News Items CSS Pages
+*/
+
+.news-item-grid {
+    /*The Grid code to make sure the page layout is correct*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 62.5vw;
+    grid-gap: 50px;
+    margin: 0 auto 0;
+}
+
+.newsitem-img {
+    /*width: 600px;*/
+    width: 26vw;
+    /*height: 600px;*/
+    height: auto;
+}
+
+.coffeeBeanImage {
+    /*The coffee beans images have different CSS cause these images are wider
+    when compared to the other images*/
+    /*width: 800px;*/
+    width: 42vw;
+    /*height: 535px;*/
+    height: auto;
+    /*margin-left: -150px;*/
+    margin-left: -1.8vw;
+}
+
+.coffeeBeanDesc {
+    /*The descriptions are smaller than the description for other items*/
+    width: 18.2vw;
+    margin: 5.3vh auto 0;
+}
+
+.news-desc {
+    width: 21vw;
+}
+
+.newsitem-intro {
+    /*Just setting margin on top for correct spacing and underlining the element*/
+    margin: 30px 0 0 0;
+    text-decoration: underline;
+}
+
+.newsitem-desc {
+    margin-top: 20px;
+}
+/*Responsive text, so it fits on larger screens*/
+.news-desc h1 {
+    /*font-size: 35px;*/
+    font-size: 3.8vh;
+}
+
+.news-desc h2 {
+    /*font-size: 25px;*/
+    font-size: 2.7vh;
+}
+
+.news-desc p {
+    /*font-size: 20px;*/
+    font-size: 2.1vh;
+}
+
+.mobile-news-heading {
+    /*Hiding the title that will be used for the mobile, as it has slightly different
+    html design*/
+    display: none;
+}
+
+/*
+Menu Page CSS
+*/
+.description {
+    /*The grid setup for the image and the description and links to the menu pages*/
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    margin: 2vh 25vw;
+}
+
+.menu-image {
+    /*Making sure the image is centre on itself as it is a large image, using auto height
+    so it doesn't look stretched or compacted*/
+    width: 23.4vw;
+    height: auto;
+    background-position: center;
+    background-size: cover;
+    background-image: url("Images/menuImage.png");
+}
+
+.menu-inner-flex {
+    /*Used to layout the text elements in the grid layout, not the menu part, like the
+    description, links and heading*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.menu-links {
+    /*Using flex to have the link next to each other in a line, then centring them to
+    the div*/
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+#menu-selected {
+    text-decoration: underline;
+    color: #335D3C;
+}
+
+.menu-inner-flex h1 {
+    font-size: 35px;
+    margin: 0;
+}
+
+
+.menu-links a {
+    /*Removing the hyperlink attributes so it fits the design of the website*/
+    font-family: kings-caslon, sans-serif;
+    color: #4A4B47;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.menu-desc {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.menu h3 {
+    font-family: kings-caslon, sans-serif;
+    color: #335D3C;
+}
+
+.menu {
+    width: 300px;
+    margin: 0 auto 2vh;
+}
+
+.menu span {
+    /*Used span instead of strong in case i wanted a different font weight */
+    font-weight: bold;
+}
+/*Just setting font sizes as the something different part of the menu has a lot of text*/
+.Something-Dif p {
+    font-size: 14px;
+}
+
+.Something-Dif strong {
+    font-size: 16px;
+}
+
+.Something-Dif span {
+    font-size: 16px;
+}
+
+/*
+Shop Page CSS
+*/
+
+.shop-intro {
+    margin-bottom: 2vh;
+}
+
+.shop-gallery {
+    /*Set at a static size due to the images and to keep the gaps the same at different
+    larger screen sizes*/
+    width: 950px;
+    /*Used a grid layout again, as it need to be a grid, cause this is the best way to
+    display a shop*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+    /*column-gap: 10px;*/
+    margin: 0 auto 2vh;
+}
+
+.shop-img {
+    /*Setting a responsive size but also having a max size, so it doesn't scale weird*/
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    max-height: 300px;
+
+}
+
+.shop-gallery a {
+    /*Making sure the links are the whole picture not just a section, so the can click
+    anywhere on the image and takes them to the page*/
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    max-height: 300px;
+    /*Just added a border cause some of pictures blend in with the background, so the user
+    knows where the images ends.*/
+    border: 2px solid #4A4B47;
+    /*making sure the images does not go outside the box*/
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.shop-heading {
+    font-size: 35px;
+}
+
+
+/*
+Shop Item Page CSS
+*/
+.shop-item {
+    /*used a grid layout as it is the best approach to use*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 70vw;
+    /*grid-gap: 50px;*/
+    margin: 3vh auto 0;
+}
+
+.item-info {
+    width: 26vw;
+}
+
+.item-img {
+    /*width: 800px;*/
+    width: 42vw;
+    /*height: 535px;*/
+    height: 58vh;
+    margin-left: -5.2vw;
+    /*margin-left: -400px;*/
+}
+
+.item-img-30w {
+    width: 30vw;
+    height: 58vh;
+    margin-left: -5.2vw;
+}
+
+.item-desc-blends {
+    width: 23vw;
+    margin: 2em auto 0;
+}
+
+.item-desc {
+    width: 30vw;
+    margin: 2em auto 0;
+}
+
+.disclaimer {
+    margin-top: 2.5em;
+    text-decoration: underline;
+}
+/*Just changing font sizes and decoration on certain sections of the page to make
+it match the design*/
+.shop-item h1 {
+    font-size: 3.8vh;
+    /*font-size: 35px;*/
+    margin-top: 0.5em;
+}
+
+.shop-item h3 {
+    /*font-size: 25px;*/
+    font-size: 2.7vh;
+}
+
+.shop-item p {
+    /*font-size: 20px;*/
+    font-size: 2.2vh;
+}
+
+.return a {
+    text-decoration: none;
+}
+
+.return h2 {
+    text-decoration: underline;
+}
+
+/*Just hiding element that will be used for the mobile part of the website*/
+#menu-toggle {
+    display: none;
+}
+
+.mobile-svg, .home-mobile-svg {
+    display: none;
+}
+
+hr {
+    display: none;
+}
+
+.mobile-heading {
+    display: none;
+    height: auto;
+}
+
+/*
+Media Rule, Mobile CSS
+*/
+@media only screen and (max-width: 450px) {
+    nav ul {
+        list-style: none;
+    }
+
+    nav li {
+        display: block;
+        /*line-height: 1.8em;*/
+        /*padding: 0 2.25rem;*/
+        margin: 40px auto 40px;
+    }
+
+    .vert-line, .logo {
+        display: none;
+    }
+
+    #menu-toggle {
+        position: absolute;
+        /*allowing the input check box to be checked or unchecked*/
+        display: unset;
+        /*moving the input button to off the screen, so it doesn't affect the design, also
+        hiding it with visibility in-case it somehow appears on the screen*/
+        visibility: hidden;
+        top: -100px;
+    }
+
+    #menu-label {
+        /*Making the nav appear above everything else and in the same position each time,
+        thanks to the absolute rule*/
+        position: absolute;
+        overflow: hidden;
+        /*Setting the size so the image can appear, also making it larger than the image
+        so the user has some leeway when pressing it with their fingers*/
+        width: 4rem;
+        height: 4rem;
+        /*Positioning the image*/
+        top: 0px;
+        right: 10px;
+        /*Making sure the image only appears on and in the centre*/
+        background: no-repeat url("Images/Menu.svg") center center;
+    }
+
+    .nav-item {
+        /*Setting the font*/
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    nav {
+        /*Making the drop down menu not appear in default state, so it doesn't cover the
+        screen*/
+        height: 0px;
+        overflow: hidden;
+        background-color: #E2E2DF;
+        /*Animation to make the menu opening smooth*/
+        transition: height 0.5s;
+    }
+
+    nav .start {
+        margin-top: 50px;
+    }
+
+    #menu-toggle:checked ~ nav {
+        /*when the input box is checked increase the size to 100% of the screen, so the drop
+        down menu appears*/
+        height: 100vh;
+    }
+
+    #menu-toggle:checked ~ #menu-label {
+        /*changing the image, so the user knows that pressing it again will close the menu*/
+        background-image: url("Images/No.svg");
+    }
+
+    #menu-toggle:checked ~ svg {
+        /*Hiding the Atlas home SVG otherwise it appears over the menu*/
+        display: none;
+
+    }
+
+    header {
+        /*Making the header be in the same place each time*/
+        position: fixed;
+        /*margin: 0 auto;*/
+        width: 100vw;
+    }
+
+    .mobile-svg {
+        /*Placing the logo in the middle of the nav bar and making it say there*/
+        position: absolute;
+        /*Displaying it*/
+        display: unset;
+        top: 2.23vh;
+        /*Setting it to be centre on any screen size*/
+        left: calc((100vw - 25px) / 2);
+        width: 25px;
+        height: 27px;
+    }
+
+    hr {
+        /*the line beneath the nav bar, so the user can tell where the nav bar
+        ends*/
+        display: unset;
+        position: absolute;
+        width: 100vw;
+        top: 6.7vh;
+        /*margin-top:0px;*/
+    }
+
+    /*    Global CSS
+    Making sure the nav bar is not covering any of the content*/
+    .contact-main, .about-main, .news, .newsitem-main,
+    .menu-main, .shop-main, .shop-item-main {
+        margin-top: 7.1vh;
+    }
+
+
+    /*    Moblie Home Page CSS*/
+    .home-desktop-svg {
+        display: none;
+    }
+
+    .info-container {
+        /*margin-top: -100px;*/
+        /*Using flex to correctly align the content*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #home-address {
+        margin-bottom: 2vh;
+    }
+
+    #home-hrs {
+        margin-bottom: 2vh;
+    }
+
+    .home-mobile-svg {
+        /*Displaying a different home SVG as it has slightly different dimensions compared
+        to the desktop one*/
+        display: unset;
+        width: 100vw;
+        max-height: 496px;
+        height: calc(100vh - 90px);
+        /*Used static not absolute bc with absolute it showed over drop down nav bar*/
+        position: static;
+        margin-top: 10vh;
+        overflow: hidden;
+    }
+
+    .home-footer-icons {
+        margin-bottom: 1vh;
+    }
+
+    /*Mobile Contact Page CSS*/
+    .contact-grid {
+        /*Using a grid layout as it works the best because I use it on the divs, then if the
+        divs need certain design i can use flex*/
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        width: 100vw;
+        grid-row-gap: 3vh;
+        margin: 0 0 3vh;
+    }
+
+    .image-container {
+        /*Allowing the height to be auto the image doesn't look stretched*/
+        width: 90vw;
+        margin: 0 auto;
+        height: 100%;
+    }
+
+    .contact-image {
+        width: 90vw;
+        /*height: 151px;*/
+        height: 100%;
+    }
+
+    .contact-addy {
+        margin: 3vh 0;
+    }
+
+    .map-image, .google-map {
+        width: 90vw;
+        height: auto;
+    }
+
+    .google-map {
+        margin: 0 auto;
+    }
+
+    .contact-image2 {
+        width: 90vw;
+        height: 90vw;
+    }
+
+    .non-home {
+        /*making the Nav bar taller when not opened so the content when scrolling doesn't
+        appear behind in the nav bar. As it is taller now it covers the content when scrolling*/
+        height: 7.9vh;
+    }
+
+    /*    Mobile About Page CSS*/
+    .main-txt {
+        width: 90vw;
+    }
+
+    .gallery-images {
+        /*Used a grid for the same reason on the desktop page, best way to display all the images*/
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        width: 90vw;
+        grid-gap: 3vw;
+    }
+
+    .g-img {
+        /*Adding a border to the images*/
+        border: 1px solid #4A4B47;
+    }
+
+    /*    Mobile News Page CSS*/
+    /*Just mainly changing size of fonts and widths of images so they look better on
+    mobile*/
+    .news-article {
+        width: 90vw;
+    }
+
+    .article-info {
+        font-size: 14px;
+    }
+
+    .article-date {
+        font-size: 13px;
+    }
+
+    .news-article img {
+        width: 40vw;
+        height: 40vw;
+    }
+
+    /*    Mobile News item Page CSS*/
+    .news-item-grid {
+        /*Used auto for the row height as some of the content not as tall as other, and
+         with 1fr if there was a tall element then all the divs rows would be the size
+         of the tall element/row, so auto is just the amount of height need to display all
+         the content*/
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        margin: 0 auto;
+        width: 90vw;
+        grid-gap: 0;
+    }
+    /*rest of the css for this page is just setting the margin and widths so that they
+    take up the correct amount of screen.*/
+    .newsitem-img {
+        width: 90vw;
+        height: auto;
+    }
+
+    .news-img-container {
+        width: 90vw;
+        margin: 0 auto;
+    }
+
+    .desktop-heading {
+        display: none;
+    }
+
+    .newsitem-intro {
+        margin-top: 2vh;
+    }
+
+    .news-desc {
+        width: 90vw;
+        margin-bottom: 2vh;
+    }
+
+    .return h2 {
+        font-size: 20px;
+    }
+
+    .coffeeBeanImage {
+        width: 90vw;
+        height: auto;
+    }
+
+    .coffeeBeanDesc {
+        width: 90vw;
+    }
+
+    .mobile-heading {
+        display: unset;
+        height: auto;
+    }
+
+    /*    Mobile Menu CSS Page*/
+    .description {
+        /*Same reasoning as the Mobile news item
+        Elements may be different sizes, so a combination of fr and auto works the best*/
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        width: 90vw;
+        margin: 0 auto;
+    }
+    /*Just setting widths, so they are the correct size*/
+    .menu-image {
+        width: 90vw;
+    }
+
+    .menu-image-container {
+        width: 90vw;
+    }
+
+    .Menu-Heading {
+        font-size: 35px;
+    }
+
+    /*Mobile Shop Page CSS*/
+    .shop-gallery {
+        /*Set height to 0.75 as most of the images were wider than tall, used a grid as best
+        way to display a shop*/
+        width: 90vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.75fr 0.75fr 0.75fr 0.75fr 0.75fr 0.75fr;
+    }
+    /*Setting widths and margins for gaps*/
+    .shop-img {
+        width: 100%;
+    }
+
+    .shop-intro {
+        width: 90vw;
+        margin: 0 auto 3vh;
+    }
+
+    /*    Mobile Shop Item Page CSS*/
+    .shop-item {
+        /*used to auto for all to remove unnecessary whitespace*/
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr;
+        width: 90vw;
+    }
+    /*setting widths and height so the images and divs are the correct size, while
+    allowing for whitespace on each side.*/
+    .item-desc, .item-desc-blends {
+        width: 90vw;
+        margin-top: 2vh;
+    }
+
+    .item-img, .item-img-30w {
+        width: 90vw;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .item-info {
+        width: 90vw;
+    }
+
+    .disclaimer {
+        margin-top: 3vh;
+    }
+
+    h3 {
+        margin: 2vh auto;
+    }
+
+    h2 {
+        margin-top: 3vh;
+    }
+}
+
+
+

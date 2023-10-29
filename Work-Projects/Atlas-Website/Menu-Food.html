@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu-Food</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/cyx6han.css">
+</head>
+<body>
+
+<!--    Used header as these elements lives at the top of the page-->
+<header>
+    <!--        nav is used as this will be tha navigation of the website-->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" id="menu-label"></label>
+    <nav class="non-home">
+        <a href="Home.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.346 47.491" class="mobile-svg">
+                <path id="Path_9" data-name="Path 9"
+                      d="M92.24,21.223c1.148,1.408,1.034,2.712.286,4.314-4.2,8.986-8.265,18.032-12.374,27.058-.128.281-.22.578-.383,1.011h29.738L91.089,13.059c-1.667,3.643-3.2,6.969-4.712,10.3q-6.893,15.157-13.8,30.307c-.39.848-.5,2.543-2.028,1.841-1.43-.656-.266-1.816.1-2.618q9.415-20.81,18.94-41.572a7.8,7.8,0,0,1,1.52-1.7,7.9,7.9,0,0,1,1.479,1.689q9.632,20.975,19.188,41.986c.878,1.923.5,2.563-1.611,2.565q-15.553.014-31.106,0c-2.042,0-2.446-.594-1.613-2.436q7.225-15.976,14.487-31.936C91.968,21.4,92.085,21.35,92.24,21.223Z"
+                      transform="translate(-69.353 -8.874)" fill="#335d3c" stroke="#335d3c"
+                      stroke-miterlimit="10" stroke-width="1"/>
+            </svg>
+        </a>
+        <!--            An unordered list but when you use the <a> tag the list is horizontal instead of vertical
+                        All the list items are hyperlinks to their associated pages done with the <a> tag -->
+        <hr>
+        <ul>
+            <li><a href="Home.html" class = "nav-item start">Home</a></li>
+            <li class = "vert-line"></li>
+            <li><a href="Menu-Food.html" class = "nav-item selected">Menu</a></li>
+            <li><a class="vert-line"></a></li>
+            <li><a href="Shop.html" class = "nav-item">Shop</a></li>
+            <li><a class="vert-line"></a></li>
+            <li><a href="Home.html" class="nav-item logo">
+                <!--                  <img src="Images/NavLogo.png" width="22" height="24">-->
+                <!--                                44 43.346,48 47.491-->
+                <!--                width="27" height="29"-->
+                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 43.346 47.491" class = "svg">
+                    <path id="Path_9" data-name="Path 9"
+                          d="M92.24,21.223c1.148,1.408,1.034,2.712.286,4.314-4.2,8.986-8.265,18.032-12.374,27.058-.128.281-.22.578-.383,1.011h29.738L91.089,13.059c-1.667,3.643-3.2,6.969-4.712,10.3q-6.893,15.157-13.8,30.307c-.39.848-.5,2.543-2.028,1.841-1.43-.656-.266-1.816.1-2.618q9.415-20.81,18.94-41.572a7.8,7.8,0,0,1,1.52-1.7,7.9,7.9,0,0,1,1.479,1.689q9.632,20.975,19.188,41.986c.878,1.923.5,2.563-1.611,2.565q-15.553.014-31.106,0c-2.042,0-2.446-.594-1.613-2.436q7.225-15.976,14.487-31.936C91.968,21.4,92.085,21.35,92.24,21.223Z"
+                          transform="translate(-69.353 -8.874)" fill="#335d3c" stroke="#335d3c"
+                          stroke-miterlimit="10" stroke-width="1"/>
+                </svg>
+            </a></li>
+            <li><a class="vert-line"></a></li>
+            <li><a href="About.html" class = "nav-item">About</a></li>
+            <li><a class="vert-line"></a></li>
+            <li><a href="News.html" class = "nav-item">News</a></li>
+            <li><a class="vert-line"></a></li>
+            <li><a href="Contact.html" class = "nav-item">Contact</a></li>
+
+
+        </ul>
+
+    </nav>
+</header>
+<main class ="menu-main">
+    <section class="description">
+<!--        Again heading that will be used for the mobile as it placed in a different location-->
+        <div class="mobile-heading">
+            <h1 class="Menu-Heading">Menu</h1>
+        </div>
+<!--        The image for the menu, placed in a container, so it says a certain size-->
+        <div class="menu-image-container">
+            <img src="Images/menuImage.png" class = "menu-image">
+        </div>
+        <div class="menu-inner-flex">
+            <h1 class="desktop-heading">Menu</h1>
+            <p class = "menu-desc">Our menu offers high-quality coffee and food that
+                showcases the unique products of Canberra.
+            </p>
+            <!--        These hyperlinks link to the different menus offered, I choose to link to different pages because it matches
+                        my design better and later on I will replace it with JavaScript to replace it the sections with the correct
+                        information.
+                        Kept the hyperlinks to different pages as it was the best solution-->
+            <div class="menu-links">
+<!--                The menu-selected class is there to change the design of the link, so the user knows what menu
+                    they are looking at-->
+                <h3><a href="Menu-Food.html" id = "menu-selected">Food</a></h3>
+                <h3><a href="Menu-Drinks.html">Drinks</a></h3>
+            </div>
+        </div>
+    </section>
+    <section class="menu">
+        <!--        They are each divided into separate divs in case each part of the menu needs special formatting
+                    Used the <br> to get a basic idea of the menu will look with correct formatting
+                    They each have class id, that will be used in the CSS part of the code.-->
+<!--        Kept it a narrow design to make it easier for mobile versions-->
+        <div class="all-day">
+            <h3>All day menu</h3>
+            <p>
+                Steel Cut Oat Porridge served with <br>
+                Saffron Poached Pears and Walnuts.
+                <br>
+                <span>$15</span>
+                <br>
+                <br>
+                Banana Bread with Salted Caramelised Mascarpone.
+                <br>
+                <span>$8</span>
+                <br>
+                <br>
+                Fruit Toast with Whipped Ricotta <br>
+                Seasonal Fresh Fruit and Honey.
+                <br>
+                <span>$12</span>
+                <br>
+                <br>
+                Atlas Bacon and Egg Roll:<br>
+                Bacon, Egg, a Good Serve of Avocado <br>
+                and our House Made BBQ Sauce or House Made Chilli Jam
+                <br>
+                <span>$12</span>
+                <br>
+                <br>
+                Boiled Eggs Served on Three Mills Bakery<br>
+                Dark Rye Bread with Avocado; With Bacon, <br>
+                Salmon, Mushrooms, Baked Beans or Cherry Tomatoes.
+                <br>
+                <span>$15</span>
+                <br>
+                <br>
+                Canadian Waffles, served with Caramelised Banan as, Bacon and Maple Syrup
+                <br>
+                <span>$19</span>
+                <br>
+                <br>
+            </p>
+        </div>
+        <div id="three mills">
+            <h3>Three Mills Breads:</h3>
+            <p>
+                Sourdough or Rye with Butter and your Choice of Jam, <br>
+                Vegemite, Pean ut Butter or Nutella.
+                <br>
+                <span>$6.5</span>
+                <br>
+                <br>
+                Raisin Toast with your Choice of Regular Butter <br>
+                or Whipped Espresso Butter
+                <br>
+                <span>$7.5</span>
+                <br>
+                <br>
+            </p>
+        </div>
+        <div class="sandwich">
+            <h3>Sandwiches, Served Fresh or Toasted</h3>
+            <p>
+                Ham, Cheese and Tomato
+                <br>
+                <span>$10</span>
+                <br>
+                <br>
+                Reuben: Silverside, Sauerkraut, Picklesand Russian Sauce.
+                <br>
+                <span>$10</span>
+                <br>
+                <br>
+                Beef Brisket and Caramelised Onions
+                <br>
+                <span>$10</span>
+                <br>
+                <br>
+                Sweet Potato, Chimichurri, Mesculin and Ricotta
+                <br>
+                <span>$10</span>
+                <br>
+                <br>
+            </p>
+        </div>
+        <div class="sides">
+            <h3>Sides</h3>
+            <p>
+                Bacon, Avocado, Smoked Salmon, <br>
+                Cherry Tomatoes, Mushrooms, <br>
+                Boston Baked Beans, Chilli Jam.
+                <br>
+                <span>$4</span>
+            </p>
+        </div>
+
+
+    </section>
+
+    <footer>
+        <section>
+            <div class = "hrs">
+                <p>M-F: 7am-5pm, Sat: 8am-5pm, Sun 8am-4pm </p>
+            </div>
+            <div class = "address">
+                <address>
+                    33 Hibberson St,<br>
+                    Gungahlin ACT 2912
+                </address>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/atlascafegungahlin/">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="37" height="35"
+                         viewBox="0 0 37 35">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect width="37" height="35" fill="none"/>
+                            </clipPath>
+                        </defs>
+                        <g id="Instagram" clip-path="url(#clip-path)">
+                            <path id="Path_3" data-name="Path 3"
+                                  d="M17,3.022a52.126,52.126,0,0,1,6.8.189,8.761,8.761,0,0,1,3.211.567,6.634,6.634,0,0,1,3.211,3.211,8.761,8.761,0,0,1,.567,3.211c0,1.7.189,2.267.189,6.8a52.125,52.125,0,0,1-.189,6.8,8.761,8.761,0,0,1-.567,3.211,6.634,6.634,0,0,1-3.211,3.211,8.761,8.761,0,0,1-3.211.567c-1.7,0-2.267.189-6.8.189a52.125,52.125,0,0,1-6.8-.189,8.761,8.761,0,0,1-3.211-.567,6.634,6.634,0,0,1-3.211-3.211A8.761,8.761,0,0,1,3.211,23.8c0-1.7-.189-2.267-.189-6.8a52.126,52.126,0,0,1,.189-6.8,8.761,8.761,0,0,1,.567-3.211A6.784,6.784,0,0,1,5.1,5.1,3.194,3.194,0,0,1,6.989,3.778,8.761,8.761,0,0,1,10.2,3.211,52.126,52.126,0,0,1,17,3.022M17,0a55.811,55.811,0,0,0-6.989.189A11.661,11.661,0,0,0,5.856.944,7.394,7.394,0,0,0,2.833,2.833,7.394,7.394,0,0,0,.944,5.856a8.606,8.606,0,0,0-.756,4.156A55.811,55.811,0,0,0,0,17a55.811,55.811,0,0,0,.189,6.989,11.661,11.661,0,0,0,.756,4.156,7.394,7.394,0,0,0,1.889,3.022,7.4,7.4,0,0,0,3.022,1.889,11.661,11.661,0,0,0,4.156.756A55.811,55.811,0,0,0,17,34a55.812,55.812,0,0,0,6.989-.189,11.661,11.661,0,0,0,4.156-.756,7.925,7.925,0,0,0,4.911-4.911,11.661,11.661,0,0,0,.756-4.156C33.811,22.1,34,21.533,34,17a55.811,55.811,0,0,0-.189-6.989,11.661,11.661,0,0,0-.756-4.156,7.4,7.4,0,0,0-1.889-3.022A7.394,7.394,0,0,0,28.144.944,11.661,11.661,0,0,0,23.989.189,55.811,55.811,0,0,0,17,0m0,8.311A8.549,8.549,0,0,0,8.311,17,8.689,8.689,0,1,0,17,8.311m0,14.356A5.566,5.566,0,0,1,11.333,17,5.566,5.566,0,0,1,17,11.333,5.566,5.566,0,0,1,22.667,17,5.566,5.566,0,0,1,17,22.667M26.067,5.856a2.078,2.078,0,1,0,2.078,2.078,2.1,2.1,0,0,0-2.078-2.078"
+                                  fill="#4A4B47" fill-rule="evenodd"/>
+                        </g>
+                    </svg>
+                </a>
+
+                <a href="https://www.facebook.com/Atlasonhibberson">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="35"
+                         viewBox="0 0 27 35">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect width="27" height="35" fill="none"/>
+                            </clipPath>
+                        </defs>
+                        <g id="Facebook" clip-path="url(#clip-path)">
+                            <path id="Path_1" data-name="Path 1"
+                                  d="M91.861,35V19.056h5.444l.778-6.222H91.861V8.944c0-1.75.583-3.111,3.111-3.111h3.306V.194C97.5.194,95.556,0,93.417,0c-4.667,0-7.972,2.917-7.972,8.167v4.667H80v6.222h5.444V35Z"
+                                  transform="translate(-80)" fill="#4A4B47" fill-rule="evenodd"/>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+    </footer>
+</main>
+</body>
+</html>

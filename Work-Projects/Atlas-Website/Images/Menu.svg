@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #4a4b47;
+      }
+    </style>
+  </defs>
+  <g id="Menu" transform="translate(0.032 0.032)">
+    <rect id="Rectangle_175" data-name="Rectangle 175" class="cls-1" width="21" height="21" transform="translate(-0.032 -0.032)"/>
+    <path id="Union_4" data-name="Union 4" class="cls-2" d="M0,0V2.715H10.5V0ZM0,8.143v2.714H21V8.143Zm0,8.143V19H21V16.286Z" transform="translate(20.968 19.968) rotate(180)"/>
+  </g>
+</svg>

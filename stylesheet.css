@@ -1,0 +1,558 @@
+
+html, body{
+    /*Setting the global rules of height and margin*/
+    height: 100%;
+    margin: 0;
+}
+p{
+    /*Setting the font for all the p tags in the project*/
+    font-family: mainfont, serif;
+}
+/*Creating fonts to be used in the website*/
+@font-face {
+    font-family: myfont;
+    src: url("sofachrome-rg.ttf");
+}
+@font-face {
+    font-family: mainfont;
+    src: url("CaviarDreams.ttf");
+}
+/*Setting background colour and text colour for the body area of the website*/
+body{
+    background-color: #0A0A0A;
+    color: #FAF5EF;
+}
+/*Nav Bar CSS*/
+/*Creating a flex object and centering it via the justify content*/
+.nav{
+    display: flex;
+    justify-content: center;
+}
+.nav_list{
+    /*having no list style, padding and margin for positioning and looks*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav_list li{
+    /**/
+    display: block;
+    padding: 1rem;
+    float: left;
+    position: relative;
+    text-decoration: none;
+}
+li:hover{
+    /*Changing the cursor to a hand to indicate a link*/
+    cursor: pointer;
+}
+.dropdown{
+    /*Setting the drop down to be hidden. Setting a min width and then just setting the colour
+    of background and text. Setting Z-index to 1 so it sits above rest of the page.*/
+    display: none;
+    visibility: hidden;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    z-index: 1;
+    padding: 0 0.5rem;
+    border: #FAF5EF 1px solid;
+    background: #0A0A0A;
+
+}
+.nav-list-item:hover > .dropdown,
+.dropdown:hover{
+    /*Showing the dropdown when hovered over*/
+    visibility: visible;
+    /*making the background slightly see through*/
+    background: rgb(10,10,10,.95);
+    display: block;
+}
+.dropdown li{
+    /*Just drop items formatting*/
+    padding: 1vh 0;
+    clear: both;
+    width: 100%;
+}
+.nav_list a {
+    /*Setting font, colour and position of the links*/
+    color: #FAF5EF;
+    text-align: center;
+    font-family: myfont, serif;
+    font-size:12px ;
+}
+
+
+.bg-image{
+    /*Setting the background image, cover to cover the whole page, no-repeat to make
+    sure it doesn't repeat*/
+    background-image: url("Images/westfield2.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#home-page-text{
+    /*centring the text to be in the middle of the page*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 90vh;
+}
+#home-page-text h1{
+    /*setting font and outlining it so it stands out*/
+    text-align: center;
+    font-family: myfont, serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #0A0A0A;
+    text-decoration: underline;
+}
+
+.passion-container{
+    /*centring the text with margin auto*/
+    margin: auto;
+    width: 35%;
+    font-family: mainfont, serif;
+}
+.passion-container h1{
+    text-align: center;
+}
+
+.form-area {
+    /*Creating the area that the form will live in. Via setting width and other visual elements*/
+    text-align: left;
+    margin: 2vh auto;
+    padding: 1vh 1vw;
+    width: 20vw;
+    /*position: relative;*/
+    display: flex;
+    flex-direction: column;
+    border: #121212 2px solid;
+    border-radius: 5px;
+    background-color: #121212;
+}
+#fname{
+    /*Setting width and adding space between it and other elements*/
+    width: 10vw;
+    margin: 1vh 0;
+}
+#feedback,#question{
+    /*Setting width, height and adding space between it and other elements*/
+    margin: 1vh 0 0.25vh 0;
+    width: 20vw;
+    height: 15vh;
+}
+.form-buttons{
+    /*adding distance between buttons and the textarea*/
+    margin-top: 1vh;
+    margin-right: 1vw;
+}
+
+textarea{
+    /*Removing the ability to resize the textareas*/
+    resize: none;
+}
+/*Making the footer sticky by keeping it at the bottom of the page*/
+#page-container{
+    position: relative;
+    min-height: 100vh;
+}
+#wrapper{
+    padding-bottom: 4em;
+}
+/*Footer CSS*/
+
+.footer{
+    /*centring the text, creating a flex container so i can organise the items in
+    a set manner. Set in a column direction cause i want them stacked instead of
+    next to each other.*/
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #FAF5EF;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4em;
+    font-family: myfont, serif;
+    font-size: 12px;
+}
+.footer-links{
+    /*padding: 1vh;*/
+    text-align: center;
+}
+.footer-links a {
+    margin: 0.5vw;
+}
+.footer a {
+    color: #FAF5EF;
+}
+.footer-links{
+    margin-right: 1.5vw;
+}
+.insta{
+    /*margin-top: 1vh;*/
+    width: 1.5vw;
+    height: auto;
+    /*text-align: center;*/
+    margin: 0.75vh auto;
+}
+#resume{
+    margin: 0 auto;
+    width: 40%;
+    font-family: mainfont, serif;
+}
+h1,h2,h3,h4{
+    font-family: myfont, serif;
+}
+
+/*Portfolio CSS*/
+.portfolio-container{
+    /*Created another flex container*/
+    display: flex;
+    flex-direction: column;
+}
+.work-container{
+    text-align: center;
+}
+.photography-container{
+    text-align: center;
+}
+.creative-container{
+    text-align: center;
+}
+.flex-display{
+    /*Another flex container to display the work in a grid format that wraps after 2
+    images are place. created a gap with gap. also centring the whole div*/
+    margin: 0 auto;
+    height: auto;
+    width: 55vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1vw;
+    flex-wrap: wrap;
+}
+.future-Wrk-container{
+    text-align: center;
+}
+.photos{
+    /*Setting photos size*/
+    width: 35vw;
+    height: auto;
+}
+.portfolio-container a {
+    /*colouring the link and removing the underline from them.*/
+    text-decoration: none;
+    color: #FAF5EF;
+}
+.place-holder{
+    text-align: center;
+}
+#sitemap{
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+#sitemap h1{
+    font-family: myfont, serif;
+}
+#sitemap ul{
+    /*making the list look pretty */
+    list-style-type: none;
+    display: inline-block;
+    text-align: left;
+}
+#sitemap-list li{
+    font-family: mainfont, serif;
+    margin: 0.5rem 0 ;
+}
+#source-log{
+    text-align: center;
+
+}
+#source-log table{
+    /*creating border for the table*/
+    text-align: left;
+    margin: 0 auto;
+    width: 40%;
+    border: #FAF5EF 1px solid;
+}
+th,tr,table{
+    /*creating a border for each cell*/
+    border-bottom: #FAF5EF 1px solid;
+    border-left: #FAF5EF 1px solid;
+    border-collapse: collapse;
+}
+.gallery-cont{
+    /*Container for the gallery - setting size that the gallery will take and centring it*/
+    text-align: center;
+    width: 70vw;
+    margin: 0 auto;
+}
+#gallery{
+    /*creating a grid to display the images - all columns the same size of 1fr and has a
+    gap of 1vh*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1vh;
+}
+.gallery-img{
+    /*Setting image size and making sure it fills the area correctly*/
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    transition: all 250ms ease-in-out;
+}
+.gallery-img:hover{
+    /*Adding animation when you hover over the image to make it clear which image you are
+    about to click on.*/
+    opacity: .9;
+    cursor: zoom-in;
+    transform: scale(1.01);
+}
+#tall-image{
+    /*Making it take up two rows*/
+    grid-row: span 2;
+}
+
+
+/*Light Box CSS*/
+.lightbox-container{
+    /*Creating the container for the lightbox - making it not visible via display none
+    Then just making it take up all available space*/
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+.lightbox-container.active{
+    /*Container that the user will see when they click on the image
+    the .active is a css feature that allows me to add it or remove thus making it possible to
+    show or hide the lightbox*/
+    display: grid;
+    place-items: center;
+    position: fixed;
+    /*Making sure the lightbox is the top of all elements*/
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0,0,0, 0.8);
+/*    Making background semi-transparent*/
+}
+.lightbox-image-wrapper{
+    /*The element that exist around the image so the image just fills the area of this box*/
+    text-align: center;
+    /*Setting size of the box*/
+    width: 65vw;
+    height: auto;
+    position: relative;
+    /*Creating a shadow behind the box*/
+    box-shadow: 3px 3px 10px rgba(255,255,255,0.5);
+    /*Making it a flex so i can add buttons to move across images*/
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255,255,255,0.5);
+}
+.lightbox-img{
+    /*Making the image take up all available space*/
+    width: 100%;
+    height: 100%;
+}
+.lightbox-btn{
+    /*Creating buttons so you can click through the images*/
+    position: absolute;
+    /*Placing it in the middle of the image height wise*/
+    top: 50%;
+    /*Just setting size and other graphical elements*/
+    height: auto;
+    width: auto;
+    background: none;
+    border: none;
+}
+/*Making sure buttons sit on the right side of the light box*/
+.right{
+    right: 0;
+}
+.left{
+    left: 0;
+}
+/*Creating 2 wrapper for the button cause for some reason one breaks after tall image*/
+.button-wrapper{
+    height: 100%;
+    width: 5%;
+    /*background-color: red;*/
+}
+.button-wrapper2{
+    height: 100%;
+    width: 5%;
+}
+
+/*Article for Work Section*/
+.work-list{
+    /*Setting up a column system to display works in a column system - each work is a
+     article.*/
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    /*Centring*/
+    margin: 0 auto;
+    gap: 0.75em;
+    text-align: center;
+}
+#ProjH1{
+    text-align: center;
+    text-decoration: underline;
+}
+.work-item{
+    /*Setting size and centring text*/
+    height: 30vh;
+    width: 50vw;
+    text-align: center;
+    /*Creating an inner flex to correctly display elements*/
+    display: flex;
+    flex-direction: row ;
+    /*Creating a border for design reason*/
+    border-bottom: 2px #FAF5EF solid;
+    /*Creating a separation for design reasons*/
+    padding-bottom: 0.5em;
+}
+.arti-wrk-info{
+    /*Centring vertically*/
+    margin: auto 0;
+}
+.arti-wrk-info p {
+    /*Setting size and centring*/
+    width: 80%;
+    margin: auto auto;
+    /*design changes*/
+    border-top: #FAF5EF solid 2px;
+    padding: 1em 2em 0 2em;
+    font-size: 14px;
+}
+.arti-wrk-info h2{
+    /*Design adjustments, like creating space and setting size*/
+    margin-bottom: 7vh;
+    width: 28vw;
+}
+.work-list a {
+    /*removing underline and setting colour to normal page colour so it looks cleaner*/
+    text-decoration: none;
+    color: #FAF5EF;
+}
+
+.article-image{
+    /*setting size and padding for design choices, so it doesn't looked cluttered*/
+    width: 20vw;
+    height: auto;
+    padding-right: 1vw;
+}
+.wrk-pg-content{
+    /*Centring text and whole div - setting width for design reasons*/
+    width: 50vw;
+    text-align: center;
+    margin: 0 auto;
+}
+.wrk-links{
+    /*Chaning colour for design reasons*/
+    color: #FAF5EF;
+}
+#atlas-image{
+    /*Setting size so it doesn't take up the whole page*/
+    width: 50vw;
+    height: auto;
+}
+#bible-gallery{
+    /*Creating up a flex gallery - setting it as row and allowing it wrap so only 2 images
+    exist per row & centring the elements inside the div via justify content*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1vh;
+    width: 50vw;
+    justify-content: center;
+}
+#bible-gallery img{
+    /*Setting size to allow for 2 images in the row*/
+    width: 24.75vw;
+    height: auto;
+}
+.chill-spots-container{
+    /*Centring horizontally */
+    margin: 0 auto;
+    /*Creating a single column flex display - so everything lives in a single column and
+    is placed behind the previous element*/
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    justify-content: center;
+    column-gap: 1vw;
+}
+.Map-img{
+    /*Setting image size*/
+    width: 25vw;
+    height: auto;
+}
+.spot-info {
+
+}
+.ratings{
+    text-align: center;
+}
+.ratings-img{
+    /*Setting image size*/
+    width: 8vw;
+    height: auto;
+}
+.ratings-txt{
+    /*Adding space between elements for design reason*/
+    margin: 5px;
+}
+#index-pg{
+    /*Setting size and centring elements, also setting fonts again cause it breaks for some reason*/
+    text-align: center;
+    width: 50vw;
+    margin: 0 auto;
+    font-family: mainfont, serif;
+}
+#index-imgs{
+    /*Setting size and centring*/
+    width: 50vw;
+    text-align: center;
+    margin: 0 auto;
+}
+#index-imgs img{
+    /*Setting size and adding space on the bottom of each image for design reasons*/
+    width: 50vw;
+    margin: 0 0 1em 0;
+}
+
+.button-div{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.social-feed{
+    margin: 0 auto;
+    text-align: center;
+    width: 700px;
+}
+.insta-big{
+    width: 4vw;
+    height: auto;
+}
+model-viewer{
+    width: 50vw;
+    height: 50vw;
+    margin: 0 auto;
+    border: 1px solid #FAF5EF;
+}
+.viewer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.viewer a{
+    color: #FAF5EF;
+}
