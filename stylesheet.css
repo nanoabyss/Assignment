@@ -389,6 +389,46 @@ th,tr,table{
     width: 5%;
 }
 
+/* ------------------------------------------------------------------------------------------------------------------- */
+/* Work 2 Page CSS */
+/* ------------------------------------------------------------------------------------------------------------------- */
+#overall-projects-container{
+    border: 1px blue solid;
+    margin: 0 auto;
+    width: 70vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1vw;
+    row-gap: 1vw;
+}
+.project-items{
+    border: 1px green solid;
+    height: 20vw;
+}
+.project-item-img{
+    width: 100%;
+    height: 100%;
+}
+.project-item-img:hover{
+    opacity: 0.5;
+}
+.project-title{
+    position: relative;
+    visibility: hidden;
+    font-size: 30px;
+    bottom: 200px;
+    left: 150px;
+    color: rebeccapurple;
+    font-weight: bold;
+}
+.project-item-img:hover .project-title{
+    visibility: visible;
+}
+
+
+
+
 /*Article for Work Section*/
 .work-list{
     /*Setting up a column system to display works in a column system - each work is a
