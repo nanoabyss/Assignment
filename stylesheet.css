@@ -227,9 +227,9 @@ h1,h2,h3,h4{
     images are place. created a gap with gap. also centring the whole div*/
     margin: 0 auto;
     height: auto;
-    width: 55vw;
+    width: 75vw;
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     gap: 1vw;
     flex-wrap: wrap;
@@ -240,7 +240,7 @@ h1,h2,h3,h4{
 .photos{
     /*Setting photos size*/
     width: 35vw;
-    height: auto;
+    height: 25vw;
 }
 .portfolio-container a {
     /*colouring the link and removing the underline from them.*/
@@ -393,7 +393,6 @@ th,tr,table{
 /* Work 2 Page CSS */
 /* ------------------------------------------------------------------------------------------------------------------- */
 #overall-projects-container{
-    border: 1px blue solid;
     margin: 0 auto;
     width: 70vw;
     height: auto;
@@ -403,28 +402,44 @@ th,tr,table{
     row-gap: 1vw;
 }
 .project-items{
-    border: 1px green solid;
     height: 20vw;
+    width: auto;
+    position: relative;
 }
 .project-item-img{
+    display: block;
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
-.project-item-img:hover{
-    opacity: 0.5;
+#chill-spot-img{
+    object-fit: fill;
 }
+
 .project-title{
-    position: relative;
-    visibility: hidden;
-    font-size: 30px;
-    bottom: 200px;
-    left: 150px;
-    color: rebeccapurple;
-    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    /* width: 100%;
+    height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease;
 }
-.project-item-img:hover .project-title{
-    visibility: visible;
+.project-title:hover{
+    opacity: 1;
 }
+.project-title p {
+    color: #0A0A0A;
+    font-size: 20px;
+    padding: 1vw;
+    background: #FAF5EF;
+}
+
 
 
 

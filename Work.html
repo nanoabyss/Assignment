@@ -25,6 +25,7 @@
                 <ul class = "dropdown">
                     <li><a href="Work.html">Work</a> </li>
                     <li><a href="photography.html">Photography</a> </li>
+                    <li><a href="creative.html">Creative</a></li>
                 </ul>
             </li>
             <li class = "nav-list-item"><a href="Form.html">Contact Me</a>
@@ -40,88 +41,80 @@
 <div id = "page-container">
     <div id = "wrapper">
 <!--        Div for the creating a column with flex to have a section for each element of work-->
-        <div class = "button-div"><button onclick="toggleCSS()">Toggle CSS</button></div>
         <h1 id = "ProjH1">Projects</h1>
-        <div class = "work-list">
-
-<!--            Title and links so it directs to the correct page-->
-
-            <a href="Work-Pages/Hummus-Work.html" id = "article1">
-<!--         Article instead of div so i know that it is the main elements of this section-->
-            <div class = "work-item"  >
-<!--                Separate div for the text so i can format it how i desire-->
-                    <div class = "arti-wrk-info">
-                        <h2>Eating Energy</h2>
-                    <p>
-                      Eating Energy was a group project created by myself and Gwen during our university studies to explore
-                        the energy consumption by Australian states then broken down by energy types.
-                    </p>
-
-                    </div>
-<!--                image outside the dive but in the article so it falls in the flex but not the inner-flex-->
-                <img src="Work-Projects/Eating%20Energy/images/image1.png" class = "article-image" alt="Hummus and Bread">
+        <div id = "overall-projects-container">
+            <a href="Work-Pages/Hummus-Work.html">
+            <div class="project-items">
+                <img src="Work-Projects/Eating%20Energy/images/image1.png" class = "project-item-img" alt="Hummus and Bread">
+                <div class = "project-title">
+                    <p>Eating Energy</p>
+                </div>
             </div>
-            </a>
-<!--            All other articles follow the same structure just different content.-->
-            <a href="Work-Pages/Bible.html"  id = "article2">
-            <article class = "work-item">
-                <div class = "arti-wrk-info">
-                    <h2>Bible Photogrammetry</h2>
-                    <p>
-                        Bible Photogrammetry was a university project in which i explored photogrammetry to make a commentary
-                        on themes of control expressed/interpreted from the Bible.
-                    </p>
+        </a>
+        <a href="Work-Pages/Bible.html">
+            <div class="project-items">
+                <img src="Work-Projects/photogrammetry/GayMarriage1.png" class = "project-item-img" alt="Bible with gay marriage images on it">
+                <div class = "project-title">
+                    <p>Bible Photogrammetry</p>
                 </div>
-                <img src="Work-Projects/photogrammetry/GayMarriage1.png" class = "article-image" alt="Bible with gay marriage images on it">
-            </article>
-            </a>
-            <a href="Work-Pages/Atlas.html"  id = "article3">
-            <article class = "work-item">
-                <div class = "arti-wrk-info">
-                    <h2>Atlas Café Website</h2>
-                    <p>
-                        Atlas Café Website was another university project where i created a website for a café in gungahlin
-                    </p>
+            </div>
+        </a>
+        <a href="Work-Pages/Atlas.html">
+            <div class="project-items">
+                <img src="Work-Projects/Atlas-Website/Images/ContactImage.jpg" class = "project-item-img" alt ="Picture of Cafe">
+                <div class = "project-title">
+                    <p>Atlas Café Website</p>
                 </div>
-                <img src="Work-Projects/Atlas-Website/Images/ContactImage.jpg" class = "article-image" alt ="Picture of Cafe">
-            </article>
-            </a>
-            <a href="Work-Pages/Dynamic.html" id = "article4">
-            <article class = "work-item">
-                <div class = "arti-wrk-info">
-                    <h2>Dynamic Identity</h2>
-                    <p>
-                       Dynamic Identity was a group university project with the goal of creating a dynamic identity for the
-                        National Arboretum Canberra
-                    </p>
+            </div>
+        </a>
+        <a href="Work-Pages/Dynamic.html">
+            <div class="project-items">
+                <img src="Work-Projects/Dynamic%20Identity/Logo-Dy-ID.png" class = "project-item-img" alt = "Custom National Arboretum Canberra Logo">
+                <div class = "project-title">
+                    <p>Dynamic Identity</p>
                 </div>
-                <img src="Work-Projects/Dynamic%20Identity/Logo-Dy-ID.png" class = "article-image" alt = "Custom National Arboretum Canberra Logo">
-            </article>
-            </a>
-            <a href="Work-Pages/Chill.html" id = "article5">
-            <article class = "work-item">
-                <div class = "arti-wrk-info">
-                    <h2>Chill spots map</h2>
-                    <p>
-                        Chill spots map was a university project in which I was tasked with creating a brochure of my choice of topic.
-                    </p>
+            </div>
+        </a>
+        <a href="Work-Pages/Chill.html">
+            <div class="project-items">
+                <img src="Work-Projects/Vibe%20spots/Basic%20Page%20Design-08.png" class = "project-item-img" alt = "Chill Vibes Spots" id ="chill-spot-img">
+                <div class = "project-title">
+                    <p>Chill spots map</p>
                 </div>
-                <img src="Work-Projects/Vibe%20spots/Basic%20Page%20Design-08.png" class = "article-image" alt = "Chill Vibes Spots">
-            </article>
-            </a>
-            <a href="Work-Pages/JS-Experiment.html" id = "article6">
-            <article class = "work-item">
-                <div class = "arti-wrk-info">
-                    <h2>JavaScript Experiments</h2>
-                    <p>
-                        JavaScript Experiments was a university project in which I create JavaScript experiments inside
-                        the p5.js environment
-                    </p>
+            </div>
+        </a>
+        <a href="Work-Pages/JS-Experiment.html">
+            <div class="project-items">
+                <img src="Work-Projects/P5/image.PNG" class = "project-item-img" alt = "VHS Loading screen clock">  
+                <div class = "project-title">
+                    <p>JavaScript Experiments</p>
                 </div>
-                <img src="Work-Projects/P5/image.PNG" class = "article-image" alt = "VHS Loading screen clock">
-            </article>
-            </a>
-
+            </div>
+        </a>
+        <a href="Work-Pages/data-Vis.html">
+            <div class="project-items">
+                <img src="Work-Projects/data visualisation/main-img.PNG" class = "project-item-img" alt = "VHS Loading screen clock">  
+                <div class = "project-title">
+                    <p>Data Visualisations</p>
+                </div>
+            </div>
+        </a>
+        <a href="Work-Pages/map.html">
+            <div class="project-items">
+                <img src="Work-Projects/interactive-map/main.PNG" class = "project-item-img" alt = "VHS Loading screen clock">  
+                <div class = "project-title">
+                    <p>Interactive Map</p>
+                </div>
+            </div>
+        </a>
+        <a href="Work-Pages/NBS.html">
+            <div class="project-items">
+                <img src="Work-Projects/nbs/main.PNG" class = "project-item-img" alt = "VHS Loading screen clock">  
+                <div class = "project-title">
+                    <p>NbS Website</p>
+                </div>
+            </div>
+        </a>
 
         </div>
 
