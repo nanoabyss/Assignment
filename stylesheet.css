@@ -581,7 +581,21 @@ th,tr,table{
     width: 20vw !important; 
     height: auto !important;
 }
-
+#p5Links{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+    justify-content: center;
+    width: 50vw;
+    margin: 0 auto;
+}
+.p5items{
+    width: 15vw;
+}
+.p5items img{
+    width: 100%;
+    /* height: 100%; */
+}
 
 .chill-spots-container{
     /*Centring horizontally */
@@ -646,6 +660,8 @@ th,tr,table{
 .insta-big{
     width: 4vw;
     height: auto;
+    color: #FAF5EF;
+    margin: 0 1vw;
 }
 model-viewer{
     width: 50vw;
