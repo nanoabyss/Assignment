@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+    Things to ask
+    How to make SVG text bold.
+-->
+    <meta charset="UTF-8">
+    <title>Still Working</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js" type="text/javascript"></script>
+    <style>
+        html{
+            background-color: white;
+        }
+        .state{
+            position: relative;
+            left: 135px;
+            top: -565px;
+
+        }
+        .stateRecipe{
+            position: relative;
+            /*left: -150px;*/
+            /*top: -90px;*/
+        }
+        .yearRecipe{
+            position: relative;
+            /*left: -120px;*/
+            /*top: -90px;*/
+        }
+        h1{
+            text-align: center;
+            color: black;
+        }
+        h2{
+            text-align: center;
+            color: black;
+        }
+        body{
+            color: black;
+            align-items: center;
+            text-align: center;
+        }
+        .container > span{
+            color: black;
+        }
+        .container > input{
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        .topViewImage{
+            width: 800px;
+            height: 600px;
+        }
+        .intro{
+            align-items: center;
+        }
+        .textIntro{
+            display: flex;
+            justify-content: center;
+            margin:0 auto;
+        }
+        p{
+            max-width: 40em;
+            text-align: center;
+        }
+        .imageGrid{
+            display: grid;
+            grid-gap: 25px;
+            grid-template-columns: 400px 400px;
+            /*width: 400px;*/
+            margin:0 auto;
+            justify-content: center;
+
+        }
+        .gridImages{
+            width: 400px;
+            height: 300px;
+        }
+        ul{
+            display: inline-block;
+            text-align: left;
+            font-size: 18px;
+        }
+
+    </style>
+<!--    Recipe Drop down menus-->
+</head>
+<body>
+<h1>Energy type usage for each state in Australia</h1>
+<div class="intro">
+    <img class="topViewImage" src="images/topView.png">
+
+</div>
+<div class="textIntro">
+    <p>
+    Lorem ipsum dolor sit amet, eam eu eirmod forensibus. Mei labitur labores ea. Aliquid sanctus legimus in vis,
+    latine suscipit prodesset et vix. Senserit consulatu constituto usu te, sea iisque euismod ex. Populo dolorem consequuntur eu mel,
+    no vix docendi officiis suscipiantur. Mei aliquip mediocrem scribentur ei, audiam omittantur liberavisse mea ad,
+    ut qui suas audiam mediocritatem.
+    <br>
+    <br>
+    Pro eius adversarium consectetuer no. Placerat quaestio ex vix, his te error dolores, detraxit suavitate duo ad.
+    Aeque offendit cu est. No qui consul soluta deterruisset. Duo soluta epicurei in, an duo justo persius facilisis,
+    putant delicata his id. Te eos elit movet, eum deleniti persecuti id.
+    </p>
+</div>
+
+<div class="imageGrid">
+    <img class="gridImages" src="images/image1.png">
+    <img class="gridImages" src="images/image2.png">
+    <img class="gridImages" src="images/image3.png">
+    <img class="gridImages" src="images/image4.png">
+</div>
+
+<div id="drawing">
+    <h2>Data Visualisation</h2>
+    <select class = "state" id = "stateSelection" onchange="stateData(value)">
+        <option value="NSW">New South Wales</option>
+        <option value="VIC">Victoria</option>
+        <option value="QLD">Queensland</option>
+        <option value="SA">South Australia</option>
+        <option value="WA">Western Australia</option>
+        <option value="TAS">Tasmania</option>
+        <option value="NT">Northern Territory</option>
+        <option value="AUS">Australia</option>
+    </select>
+</div>
+<div id="dropDown">
+    <select class = "stateRecipe" id = "stateRSelection" onchange="recipeCreation(),recipeRemoval()">
+        <option value="NSW">New South Wales</option>
+        <option value="VIC">Victoria</option>
+        <option value="QLD">Queensland</option>
+        <option value="SA">South Australia</option>
+        <option value="WA">Western Australia</option>
+        <option value="TAS">Tasmania</option>
+        <option value="NT">Northern Territory</option>
+        <option value="AUS">Australia</option>
+    </select>
+
+    <select class = "yearRecipe" id="yearRSelection" onchange="recipeCreation(),recipeRemoval()">
+        <option value="2008">2008</option>
+        <option value="2009">2009</option>
+        <option value="2010">2010</option>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+    </select>
+</div>
+<div>
+    <h2>Recipe</h2>
+    <h4>Hummus Base Recipe</h4>
+    <ul id="recipeList" class="recipeListStatic">
+        <li >600g canned chickpeas, drained, rinse</li>
+        <li>2 tablespoons tahini paste (see note)</li>
+        <li>1/4 cup (60ml) water</li>
+        <li>100ml olive oil, plus extra to serve</li>
+        <li>Turkish bread, toasted, to serve</li>
+    </ul>
+
+</div>
+<div id="text">
+</div>
+
+
+
+
+<script type="text/javascript">
+    var dataSet = [{"Year":2008,"State":"AUS","Total":247524.7,"Non-Renewables":92.5,"Coal":74.4,"Natural_Gas":23,"Oil":1.4,"Other":1.4,"Renewables":7.5,"Biomass":1.1,"Wind":1.5,"Hydro":4.8,"Solar_PV":0.1,"Geothermal":0},
+        {"Year":2008,"State":"NSW","Total":74382.7,"Non-Renewables":"94.70%","Coal":90.9,"Natural_Gas":3.3,"Oil":0,"Other":0.5,"Renewables":5.3,"Biomass":0.9,"Wind":0.1,"Hydro":4.3,"Solar_PV":0,"Geothermal":0},
+        {"Year":2008,"State":"QLD","Total":64029.9,"Non-Renewables":96.1,"Coal":79.5,"Natural_Gas":14.5,"Oil":1.1,"Other":1.1,"Renewables":3.9,"Biomass":2.5,"Wind":0,"Hydro":1.3,"Solar_PV":0.1,"Geothermal":0},
+        {"Year":2008,"State":"VIC","Total":55074.4,"Non-Renewables":97.4,"Coal":94.6,"Natural_Gas":2.6,"Oil":0,"Other":0.1,"Renewables":2.6,"Biomass":0.5,"Wind":1,"Hydro":1,"Solar_PV":0,"Geothermal":0},
+        {"Year":2008,"State":"WA","Total":27724.9,"Non-Renewables":97.1,"Coal":31.5,"Natural_Gas":52.5,"Oil":4.3,"Other":7.8,"Renewables":2.9,"Biomass":0.4,"Wind":2.4,"Hydro":0,"Solar_PV":0.1,"Geothermal":0},
+        {"Year":2008,"State":"SA","Total":14793.2,"Non-Renewables":85.6,"Coal":33,"Natural_Gas":49.8,"Oil":0.4,"Other":2.3,"Renewables":14.4,"Biomass":0.6,"Wind":13.7,"Hydro":0,"Solar_PV":0.2,"Geothermal":0},
+        {"Year":2008,"State":"TAS","Total":8597.2,"Non-Renewables":9,"Coal":0,"Natural_Gas":8.2,"Oil":0.8,"Other":0,"Renewables":91,"Biomass":0.3,"Wind":5.7,"Hydro":85.1,"Solar_PV":0,"Geothermal":0},
+        {"Year":2008,"State":"NT","Total":2922.4,"Non-Renewables":99.7,"Coal":0,"Natural_Gas":64.1,"Oil":35.6,"Other":0,"Renewables":0.3,"Biomass":0.3,"Wind":0,"Hydro":0,"Solar_PV":0,"Geothermal":0},{"Year":2009,"State":"AUS","Total":252279.1,"Non-Renewables":91.4,"Coal":71.3,"Natural_Gas":17.7,"Oil":1.2,"Other":1.2,"Renewables":9.6,"Biomass":1.1,"Wind":2,"Hydro":5.4,"Solar_PV":0.2,"Geothermal":0},{"Year":2009,"State":"NSW","Total":74632.7,"Non-Renewables":"93.20%","Coal":86.3,"Natural_Gas":6.3,"Oil":0,"Other":0.7,"Renewables":6.8,"Biomass":0.9,"Wind":0.6,"Hydro":5.1,"Solar_PV":0.2,"Geothermal":0},{"Year":2009,"State":"QLD","Total":65404.4,"Non-Renewables":96.5,"Coal":77.8,"Natural_Gas":18.4,"Oil":0.6,"Other":1.6,"Renewables":3.5,"Biomass":2.4,"Wind":0,"Hydro":0.9,"Solar_PV":0.2,"Geothermal":0},{"Year":2009,"State":"VIC","Total":55975.9,"Non-Renewables":95.3,"Coal":92.1,"Natural_Gas":3,"Oil":0,"Other":0.2,"Renewables":4.7,"Biomass":0.5,"Wind":2.5,"Hydro":1.5,"Solar_PV":0.1,"Geothermal":0},{"Year":2009,"State":"WA","Total":28852.4,"Non-Renewables":97.1,"Coal":33.3,"Natural_Gas":55.5,"Oil":4.8,"Other":3.5,"Renewables":2.9,"Biomass":0.4,"Wind":2.3,"Hydro":0,"Solar_PV":0.2,"Geothermal":0},{"Year":2009,"State":"SA","Total":14132.3,"Non-Renewables":84.6,"Coal":32,"Natural_Gas":49.1,"Oil":1.2,"Other":2.4,"Renewables":15.4,"Biomass":0.6,"Wind":14.4,"Hydro":0,"Solar_PV":0.4,"Geothermal":0},{"Year":2009,"State":"TAS","Total":10014.8,"Non-Renewables":11.8,"Coal":0,"Natural_Gas":11.1,"Oil":0.7,"Other":0,"Renewables":88.2,"Biomass":0.3,"Wind":4.9,"Hydro":82.9,"Solar_PV":0.1,"Geothermal":0},{"Year":2009,"State":"NT","Total":3266.6,"Non-Renewables":99.6,"Coal":0,"Natural_Gas":65.3,"Oil":34.2,"Other":0.1,"Renewables":0.4,"Biomass":0.3,"Wind":0,"Hydro":0,"Solar_PV":0.1,"Geothermal":0},{"Year":2010,"State":"AUS","Total":253577.2,"Non-Renewables":98.5,"Coal":67.9,"Natural_Gas":19.3,"Oil":1.2,"Other":1.1,"Renewables":10.5,"Biomass":0.8,"Wind":2.4,"Hydro":6.6,"Solar_PV":0.6,"Geothermal":0},{"Year":2010,"State":"NSW","Total":72739.1,"Non-Renewables":90.5,"Coal":83.5,"Natural_Gas":6.5,"Oil":0.1,"Other":0.4,"Renewables":9.5,"Biomass":0.8,"Wind":0.7,"Hydro":7.2,"Solar_PV":0.7,"Geothermal":0},{"Year":2010,"State":"QLD","Total":64186.7,"Non-Renewables":96.4,"Coal":79.3,"Natural_Gas":22.7,"Oil":0.6,"Other":1.6,"Renewables":3.6,"Biomass":1.4,"Wind":0,"Hydro":1.5,"Solar_PV":0.6,"Geothermal":0},{"Year":2010,"State":"VIC","Total":55607,"Non-Renewables":94.4,"Coal":91.8,"Natural_Gas":2.3,"Oil":0.1,"Other":0.2,"Renewables":5.6,"Biomass":0.6,"Wind":2.6,"Hydro":2,"Solar_PV":0.4,"Geothermal":0},{"Year":2010,"State":"WA","Total":31940.2,"Non-Renewables":96.8,"Coal":32.4,"Natural_Gas":56.7,"Oil":4.4,"Other":3.2,"Renewables":3.2,"Biomass":0.3,"Wind":2.3,"Hydro":0,"Solar_PV":0.6,"Geothermal":0},{"Year":2010,"State":"SA","Total":14435.9,"Non-Renewables":78.1,"Coal":29.3,"Natural_Gas":46.4,"Oil":0.6,"Other":1.8,"Renewables":21.9,"Biomass":0.5,"Wind":20,"Hydro":4.1,"Solar_PV":1.3,"Geothermal":0},{"Year":2010,"State":"TAS","Total":11577.4,"Non-Renewables":13.8,"Coal":0,"Natural_Gas":13,"Oil":0.8,"Other":0,"Renewables":86.2,"Biomass":0.3,"Wind":4.2,"Hydro":81.6,"Solar_PV":0.1,"Geothermal":0},{"Year":2010,"State":"NT","Total":3090.9,"Non-Renewables":99.5,"Coal":0,"Natural_Gas":66.4,"Oil":33.1,"Other":0,"Renewables":0.5,"Biomass":0.3,"Wind":0,"Hydro":0,"Solar_PV":0.2,"Geothermal":0},{"Year":2011,"State":"AUS","Total":250740.174,"Non-Renewables":89.4,"Coal":68.5,"Natural_Gas":19.4,"Oil":1.1,"Other":0.4,"Renewables":10.6,"Biomass":1.2,"Wind":2.8,"Hydro":5.6,"Solar_PV":1,"Geothermal":0},{"Year":2011,"State":"NSW","Total":70678.3,"Non-Renewables":91.6,"Coal":85.5,"Natural_Gas":6,"Oil":0.1,"Other":0,"Renewables":8.4,"Biomass":1.2,"Wind":1,"Hydro":5.4,"Solar_PV":0.7,"Geothermal":0},{"Year":2011,"State":"QLD","Total":63678.9,"Non-Renewables":95.9,"Coal":79.9,"Natural_Gas":24,"Oil":0.5,"Other":0,"Renewables":4.1,"Biomass":1.8,"Wind":0,"Hydro":1.1,"Solar_PV":1.2,"Geothermal":0},{"Year":2011,"State":"VIC","Total":56907.847,"Non-Renewables":93.5,"Coal":91.8,"Natural_Gas":2.3,"Oil":0.1,"Other":0.2,"Renewables":6.5,"Biomass":1.5,"Wind":2.5,"Hydro":1.8,"Solar_PV":0.7,"Geothermal":0},{"Year":2011,"State":"WA","Total":32301,"Non-Renewables":94.6,"Coal":32.4,"Natural_Gas":56.7,"Oil":4.4,"Other":3.2,"Renewables":5.4,"Biomass":0.4,"Wind":4,"Hydro":0,"Solar_PV":1,"Geothermal":0},{"Year":2011,"State":"SA","Total":13408.628,"Non-Renewables":73.2,"Coal":22.4,"Natural_Gas":50,"Oil":0.7,"Other":0,"Renewables":26.8,"Biomass":0.5,"Wind":23.3,"Hydro":0,"Solar_PV":3,"Geothermal":0},{"Year":2011,"State":"TAS","Total":10617.9,"Non-Renewables":15.3,"Coal":0,"Natural_Gas":14.7,"Oil":0.6,"Other":0,"Renewables":84.7,"Biomass":0.3,"Wind":4,"Hydro":80.2,"Solar_PV":0.2,"Geothermal":0},{"Year":2011,"State":"NT","Total":3147.6,"Non-Renewables":99.4,"Coal":0,"Natural_Gas":67,"Oil":32.4,"Other":0,"Renewables":0.6,"Biomass":0.2,"Wind":0,"Hydro":0,"Solar_PV":0.4,"Geothermal":0},{"Year":2012,"State":"AUS","Total":249708.6,"Non-Renewables":86.7,"Coal":63.7,"Natural_Gas":20.4,"Oil":1.8,"Other":0.8,"Renewables":13.3,"Biomass":1.3,"Wind":3.2,"Hydro":7.3,"Solar_PV":1.5,"Geothermal":0},{"Year":2012,"State":"NSW","Total":70338.8,"Non-Renewables":88.4,"Coal":80.8,"Natural_Gas":7.3,"Oil":0.3,"Other":0,"Renewables":11.5,"Biomass":1.2,"Wind":1.2,"Hydro":8,"Solar_PV":1.2,"Geothermal":0},{"Year":2012,"State":"QLD","Total":62686.6,"Non-Renewables":94.8,"Coal":81.2,"Natural_Gas":22.2,"Oil":1.7,"Other":0.1,"Renewables":5.2,"Biomass":2.5,"Wind":0,"Hydro":1.1,"Solar_PV":2.1,"Geothermal":0},{"Year":2012,"State":"VIC","Total":52946.6,"Non-Renewables":91.7,"Coal":95.6,"Natural_Gas":6.1,"Oil":0,"Other":0,"Renewables":8.3,"Biomass":1.6,"Wind":3.8,"Hydro":1.8,"Solar_PV":1.1,"Geothermal":0},{"Year":2012,"State":"WA","Total":33902.1,"Non-Renewables":93.9,"Coal":30.3,"Natural_Gas":52,"Oil":6,"Other":5.5,"Renewables":6.1,"Biomass":0.3,"Wind":3.8,"Hydro":0.7,"Solar_PV":1.3,"Geothermal":0},{"Year":2012,"State":"SA","Total":13398.5,"Non-Renewables":70.5,"Coal":16.7,"Natural_Gas":52.7,"Oil":1.1,"Other":0.1,"Renewables":29.5,"Biomass":0.5,"Wind":24.7,"Hydro":0,"Solar_PV":4.2,"Geothermal":0},{"Year":2012,"State":"TAS","Total":13121.6,"Non-Renewables":13.7,"Coal":0,"Natural_Gas":13.4,"Oil":0.1,"Other":0.2,"Renewables":86.3,"Biomass":0.3,"Wind":3.6,"Hydro":82.1,"Solar_PV":0.4,"Geothermal":0},{"Year":2012,"State":"NT","Total":3314.4,"Non-Renewables":99.3,"Coal":0,"Natural_Gas":68.5,"Oil":30.8,"Other":0,"Renewables":0.7,"Biomass":0.2,"Wind":0,"Hydro":0,"Solar_PV":0.5,"Geothermal":0},{"Year":2013,"State":"AUS","Total":249036.679,"Non-Renewables":85.3,"Coal":61.5,"Natural_Gas":21.8,"Oil":2,"Other":0,"Renewables":14.7,"Biomass":1.4,"Wind":4.1,"Hydro":7.4,"Solar_PV":1.8,"Geothermal":0},{"Year":2013,"State":"NSW","Total":68488.628,"Non-Renewables":89.4,"Coal":81.5,"Natural_Gas":8.1,"Oil":0.3,"Other":0,"Renewables":10.2,"Biomass":1.3,"Wind":1.3,"Hydro":6.2,"Solar_PV":1.4,"Geothermal":0},{"Year":2013,"State":"QLD","Total":60479.965,"Non-Renewables":93.7,"Coal":84.1,"Natural_Gas":25.6,"Oil":1.6,"Other":0,"Renewables":6.3,"Biomass":2.5,"Wind":0.1,"Hydro":1.4,"Solar_PV":4,"Geothermal":0},{"Year":2013,"State":"VIC","Total":52803.163,"Non-Renewables":89.7,"Coal":83.3,"Natural_Gas":6.1,"Oil":0.3,"Other":0,"Renewables":10.3,"Biomass":1.7,"Wind":5.2,"Hydro":2.1,"Solar_PV":1.3,"Geothermal":0},{"Year":2013,"State":"WA","Total":36679.587,"Non-Renewables":93.4,"Coal":29.7,"Natural_Gas":56.9,"Oil":6.8,"Other":0,"Renewables":6.6,"Biomass":0.3,"Wind":4.3,"Hydro":0.6,"Solar_PV":1.4,"Geothermal":0},{"Year":2013,"State":"SA","Total":13119.965,"Non-Renewables":62.5,"Coal":16,"Natural_Gas":45.7,"Oil":0.8,"Other":0,"Renewables":37.5,"Biomass":0.6,"Wind":31.6,"Hydro":0,"Solar_PV":5.2,"Geothermal":0},{"Year":2013,"State":"TAS","Total":13999.456,"Non-Renewables":7.2,"Coal":0,"Natural_Gas":7.1,"Oil":0.1,"Other":0,"Renewables":82.8,"Biomass":0.2,"Wind":5.8,"Hydro":86.2,"Solar_PV":0.5,"Geothermal":0},{"Year":2013,"State":"NT","Total":3465.815,"Non-Renewables":99,"Coal":0,"Natural_Gas":66.6,"Oil":32.4,"Other":0,"Renewables":1,"Biomass":0.3,"Wind":0,"Hydro":0,"Solar_PV":0.7,"Geothermal":0},{"Year":2014,"State":"AUS","Total":252390.733,"Non-Renewables":86.5,"Coal":62.8,"Natural_Gas":19.6,"Oil":2.2,"Other":0,"Renewables":13.5,"Biomass":1.4,"Wind":4.5,"Hydro":5.3,"Solar_PV":2.2,"Geothermal":0},{"Year":2014,"State":"NSW","Total":64159.153,"Non-Renewables":89.4,"Coal":81.9,"Natural_Gas":7.1,"Oil":0.5,"Other":0,"Renewables":10.6,"Biomass":1.6,"Wind":2.1,"Hydro":4.9,"Solar_PV":2,"Geothermal":0},{"Year":2014,"State":"QLD","Total":68117.049,"Non-Renewables":94,"Coal":74.7,"Natural_Gas":26.8,"Oil":1.8,"Other":0,"Renewables":6,"Biomass":2.4,"Wind":0,"Hydro":1,"Solar_PV":2.6,"Geothermal":0},{"Year":2014,"State":"VIC","Total":56678.509,"Non-Renewables":89.8,"Coal":85.3,"Natural_Gas":4.2,"Oil":0.3,"Other":0,"Renewables":10.2,"Biomass":1.2,"Wind":5.4,"Hydro":2.1,"Solar_PV":1.6,"Geothermal":0},{"Year":2014,"State":"WA","Total":37781.919,"Non-Renewables":93.1,"Coal":29.7,"Natural_Gas":56.9,"Oil":6.8,"Other":0,"Renewables":6.9,"Biomass":0.3,"Wind":4.3,"Hydro":0.5,"Solar_PV":1.7,"Geothermal":0},{"Year":2014,"State":"SA","Total":13026.311,"Non-Renewables":60.1,"Coal":20.2,"Natural_Gas":38.4,"Oil":1.5,"Other":0,"Renewables":39.9,"Biomass":0.7,"Wind":32.9,"Hydro":0.1,"Solar_PV":6.2,"Geothermal":0},{"Year":2014,"State":"TAS","Total":9630.888,"Non-Renewables":1.6,"Coal":0,"Natural_Gas":1.4,"Oil":0.2,"Other":0,"Renewables":98.4,"Biomass":0.4,"Wind":11,"Hydro":86.1,"Solar_PV":1,"Geothermal":0},{"Year":2014,"State":"NT","Total":2997.004,"Non-Renewables":98.5,"Coal":0,"Natural_Gas":73.5,"Oil":25.1,"Other":0,"Renewables":1.5,"Biomass":0.3,"Wind":0,"Hydro":0,"Solar_PV":1.7,"Geothermal":0},{"Year":2015,"State":"AUS","Total":257428.585,"Non-Renewables":85.2,"Coal":63.4,"Natural_Gas":19.6,"Oil":2.2,"Other":0,"Renewables":14.8,"Biomass":1.5,"Wind":4.7,"Hydro":6,"Solar_PV":2.7,"Geothermal":0},{"Year":2015,"State":"NSW","Total":70250.22,"Non-Renewables":85.8,"Coal":78.8,"Natural_Gas":6.6,"Oil":0.5,"Other":0,"Renewables":14.2,"Biomass":1.5,"Wind":2.7,"Hydro":7.4,"Solar_PV":2.6,"Geothermal":0},{"Year":2015,"State":"QLD","Total":67387.132,"Non-Renewables":93.5,"Coal":75.5,"Natural_Gas":20.5,"Oil":1.8,"Other":0,"Renewables":6.5,"Biomass":2.6,"Wind":0,"Hydro":0.7,"Solar_PV":3.4,"Geothermal":0},{"Year":2015,"State":"VIC","Total":54561.693,"Non-Renewables":88.3,"Coal":84.7,"Natural_Gas":3.5,"Oil":0.1,"Other":0,"Renewables":11.7,"Biomass":1.4,"Wind":6.1,"Hydro":2.2,"Solar_PV":2,"Geothermal":0},{"Year":2015,"State":"WA","Total":38736.801,"Non-Renewables":93.3,"Coal":28,"Natural_Gas":57.3,"Oil":7.2,"Other":0,"Renewables":7.5,"Biomass":0.2,"Wind":3.8,"Hydro":0.6,"Solar_PV":2,"Geothermal":0},{"Year":2015,"State":"SA","Total":13082.417,"Non-Renewables":58.7,"Coal":19.8,"Natural_Gas":37.9,"Oil":1,"Other":0,"Renewables":41.3,"Biomass":0.7,"Wind":37.7,"Hydro":0,"Solar_PV":8.6,"Geothermal":0},{"Year":2015,"State":"TAS","Total":10344.328,"Non-Renewables":9.2,"Coal":0,"Natural_Gas":8.3,"Oil":0.9,"Other":0,"Renewables":90.8,"Biomass":0.3,"Wind":10.2,"Hydro":79.3,"Solar_PV":1,"Geothermal":0},{"Year":2015,"State":"NT","Total":3065.994,"Non-Renewables":98.1,"Coal":0,"Natural_Gas":81,"Oil":17,"Other":0,"Renewables":1.9,"Biomass":0.3,"Wind":0,"Hydro":0,"Solar_PV":1.6,"Geothermal":0},{"Year":2016,"State":"AUS","Total":258016.971,"Non-Renewables":84.3,"Coal":62.7,"Natural_Gas":19.6,"Oil":2,"Other":0,"Renewables":158.7,"Biomass":1.4,"Wind":4.9,"Hydro":6.3,"Solar_PV":2.7,"Geothermal":0},{"Year":2016,"State":"NSW","Total":71007.75,"Non-Renewables":84,"Coal":78.8,"Natural_Gas":4.7,"Oil":0.5,"Other":0,"Renewables":16,"Biomass":1.6,"Wind":2.6,"Hydro":8.6,"Solar_PV":3.2,"Geothermal":0},{"Year":2016,"State":"QLD","Total":68976.822,"Non-Renewables":93.5,"Coal":73.8,"Natural_Gas":17.78,"Oil":1.8,"Other":0,"Renewables":6.5,"Biomass":2,"Wind":0,"Hydro":1,"Solar_PV":3.4,"Geothermal":0},{"Year":2016,"State":"VIC","Total":52687.707,"Non-Renewables":88,"Coal":82.7,"Natural_Gas":5,"Oil":0.2,"Other":0,"Renewables":12,"Biomass":1.3,"Wind":6.8,"Hydro":1.6,"Solar_PV":2.4,"Geothermal":0},{"Year":2016,"State":"WA","Total":40038.952,"Non-Renewables":92.5,"Coal":28,"Natural_Gas":56.5,"Oil":8.6,"Other":0,"Renewables":6.7,"Biomass":0.2,"Wind":3.8,"Hydro":0.6,"Solar_PV":2,"Geothermal":0},{"Year":2016,"State":"SA","Total":11711.244,"Non-Renewables":53,"Coal":0,"Natural_Gas":51.5,"Oil":1.6,"Other":0,"Renewables":47,"Biomass":0.7,"Wind":37.7,"Hydro":0,"Solar_PV":8.6,"Geothermal":0},{"Year":2016,"State":"TAS","Total":10603.27,"Non-Renewables":8.7,"Coal":0,"Natural_Gas":8.5,"Oil":0.2,"Other":0,"Renewables":91.3,"Biomass":0.2,"Wind":10.4,"Hydro":79.5,"Solar_PV":1.1,"Geothermal":0},{"Year":2016,"State":"NT","Total":2991.226,"Non-Renewables":97.1,"Coal":0,"Natural_Gas":79.1,"Oil":18,"Other":0,"Renewables":2.9,"Biomass":0.3,"Wind":0,"Hydro":0,"Solar_PV":2.6,"Geothermal":0},{"Year":2017,"State":"AUS","Total":261139.689,"Non-Renewables":82.9,"Coal":60.4,"Natural_Gas":20.6,"Oil":1.9,"Other":0,"Renewables":17.1,"Biomass":1.3,"Wind":5.8,"Hydro":6.1,"Solar_PV":3.8,"Geothermal":0},{"Year":2017,"State":"NSW","Total":71749.068,"Non-Renewables":84.2,"Coal":79.5,"Natural_Gas":4.2,"Oil":0.6,"Other":0,"Renewables":15.8,"Biomass":1.7,"Wind":3.4,"Hydro":6.9,"Solar_PV":3.9,"Geothermal":0},{"Year":2017,"State":"QLD","Total":70716.566,"Non-Renewables":92.9,"Coal":72,"Natural_Gas":15.6,"Oil":1.5,"Other":0,"Renewables":7.1,"Biomass":2,"Wind":0,"Hydro":0.9,"Solar_PV":4.1,"Geothermal":0},{"Year":2017,"State":"VIC","Total":47344.935,"Non-Renewables":84.5,"Coal":76.1,"Natural_Gas":8.1,"Oil":0.4,"Other":0,"Renewables":15.5,"Biomass":1.5,"Wind":9.1,"Hydro":1.7,"Solar_PV":3.2,"Geothermal":0},{"Year":2017,"State":"WA","Total":41178.395,"Non-Renewables":92.3,"Coal":26.8,"Natural_Gas":60.2,"Oil":5.3,"Other":0,"Renewables":7.7,"Biomass":0.3,"Wind":3.9,"Hydro":0.5,"Solar_PV":3,"Geothermal":0},{"Year":2017,"State":"SA","Total":14889.755,"Non-Renewables":53.4,"Coal":0,"Natural_Gas":52.1,"Oil":1.3,"Other":0,"Renewables":46.6,"Biomass":0.5,"Wind":38.1,"Hydro":0,"Solar_PV":7.9,"Geothermal":0},{"Year":2017,"State":"TAS","Total":11751.151,"Non-Renewables":8.6,"Coal":0,"Natural_Gas":8.3,"Oil":0.3,"Other":0,"Renewables":91.4,"Biomass":0.2,"Wind":9.8,"Hydro":80.2,"Solar_PV":1.2,"Geothermal":0},{"Year":2017,"State":"NT","Total":3509.819,"Non-Renewables":96.4,"Coal":0,"Natural_Gas":69.5,"Oil":27,"Other":0,"Renewables":3.6,"Biomass":0.2,"Wind":0,"Hydro":0,"Solar_PV":3.4,"Geothermal":0},{"Year":2018,"State":"AUS","Total":264406.5473,"Non-Renewables":80.2,"Coal":58.2,"Natural_Gas":19.8,"Oil":2.2,"Other":0,"Renewables":19.8,"Biomass":1.3,"Wind":6.8,"Hydro":6,"Solar_PV":5.6,"Geothermal":0},{"Year":2018,"State":"NSW","Total":73126.04216,"Non-Renewables":82.6,"Coal":78.9,"Natural_Gas":3.2,"Oil":0.5,"Other":0,"Renewables":17.4,"Biomass":1.6,"Wind":5.2,"Hydro":5.2,"Solar_PV":5.6,"Geothermal":0},{"Year":2018,"State":"QLD","Total":70580.74032,"Non-Renewables":89.1,"Coal":72.1,"Natural_Gas":14.12,"Oil":1.5,"Other":0,"Renewables":10.9,"Biomass":1.9,"Wind":0.7,"Hydro":1.5,"Solar_PV":6.8,"Geothermal":0},{"Year":2018,"State":"VIC","Total":47211.86301,"Non-Renewables":80.4,"Coal":73,"Natural_Gas":7,"Oil":0.4,"Other":0,"Renewables":19.6,"Biomass":1.7,"Wind":10.3,"Hydro":2.5,"Solar_PV":5,"Geothermal":0},{"Year":2018,"State":"WA","Total":42366.93083,"Non-Renewables":91.1,"Coal":23.4,"Natural_Gas":62.1,"Oil":5.6,"Other":0,"Renewables":8.9,"Biomass":0.3,"Wind":4.4,"Hydro":0.5,"Solar_PV":3.7,"Geothermal":0},{"Year":2018,"State":"SA","Total":14936.3573,"Non-Renewables":49.5,"Coal":0,"Natural_Gas":48.6,"Oil":0.9,"Other":0,"Renewables":50.5,"Biomass":0.6,"Wind":38.3,"Hydro":0.1,"Solar_PV":11.5,"Geothermal":0},{"Year":2018,"State":"TAS","Total":11729.15867,"Non-Renewables":5.4,"Coal":0,"Natural_Gas":5.3,"Oil":0.2,"Other":0,"Renewables":94.6,"Biomass":0.2,"Wind":9.5,"Hydro":83.4,"Solar_PV":1.4,"Geothermal":0},{"Year":2018,"State":"NT","Total":4455.455047,"Non-Renewables":96.4,"Coal":0,"Natural_Gas":57.9,"Oil":38.6,"Other":0,"Renewables":3.6,"Biomass":0.2,"Wind":0,"Hydro":0,"Solar_PV":3.4,"Geothermal":0}]
+
+    //basic data Visualation that will sit at the top of website
+    var height = 560;
+    var width = 775;
+    var draw = SVG('drawing').size(width,height)
+
+
+    var height2 = 300;
+    var width2 = 750;
+    var draw2 = SVG('text').size(width2, height2)
+
+
+
+    var yscale = 5.3;
+    var xscale = 7.625;
+    var xmargin = 25;
+    var ymargin = 25;
+
+    var lineDis = 53;
+
+    //TODO add focus function later for non-renewables and renewables
+    //leave the totals out but add it as a focus later down the line
+
+    //Non-renewable
+    var coalDP = [];
+    var natGasDP = [];
+    var oilDP = [];
+    var otherDP = [];
+    //Renewable
+    var bioDP = [];
+    var windDP = [];
+    var hydroDP = [];
+    var solarDP = [];
+    var geoDP = [];
+
+
+    var focusState;
+    //Starting Case:
+    stateData("NSW");
+    //infoLines();
+
+    var widthScreen = window.innerWidth;
+    console.log("Screen: " + widthScreen)
+
+    function clearDP(){
+        //Non-Renewables
+        coalDP = [];
+        natGasDP = [];
+        oilDP = [];
+        otherDP = [];
+        //Renewables
+        bioDP = [];
+        windDP = [];
+        hydroDP = [];
+        solarDP = [];
+        geoDP = [];
+    }
+    function stateData(state) {
+        clearDP();
+        dataSet.forEach(function (d, i) {
+            focusState = state;
+            //Subtracting a number from i so that the all the lines start at the same position
+            //and finish at the same position.
+            switch (d.State){
+                case "NSW":
+                    i = i-1;
+                    break;
+                case "QLD":
+                    i = i -2;
+                    break;
+                case "VIC":
+                    i = i -3;
+                    break;
+                case "WA":
+                    i = i -4;
+                    break;
+                case "SA":
+                    i = i - 5;
+                    break;
+                case "TAS":
+                    i = i - 6;
+                    break;
+                case "NT":
+                    i = i-7
+                    break;
+            }
+            //Using this if statement so it will only show the data for a single state not all the states.
+            //Works by using the state from the selection then comparing it to a state from the data
+            //then only showing that states data.
+            if(d.State == state) {
+                //Non-Renewables
+                //creating the position of the line from the data, then adding it to an array to be drawn later on.
+                cdp = [xmargin + i * xscale, height - d.Coal * yscale - ymargin];
+                coalDP.push(cdp);
+
+                ngdp = [xmargin + i * xscale, height - d.Natural_Gas * yscale - ymargin];
+                natGasDP.push(ngdp);
+
+                odp = [xmargin + i * xscale, height - d.Oil * yscale - ymargin];
+                oilDP.push(odp);
+
+                otdp = [xmargin + i * xscale, height - d.Other * yscale - ymargin];
+                otherDP.push(otdp);
+                //Renewables
+                bdp = [xmargin + i * xscale, height - d.Biomass * yscale - ymargin];
+                bioDP.push(bdp);
+
+                wdp = [xmargin + i * xscale, height - d.Wind * yscale - ymargin];
+                windDP.push(wdp);
+
+                hdp = [xmargin + i * xscale, height - d.Hydro * yscale - ymargin];
+                hydroDP.push(hdp);
+
+                sdp = [xmargin + i * xscale, height - d.Solar_PV * yscale - ymargin];
+                solarDP.push(sdp);
+
+                gdp = [xmargin + i * xscale, height - d.Geothermal * yscale - ymargin];
+                geoDP.push(gdp);
+            }
+
+
+        })
+        visLines();
+        infoLines();
+        legendCreation();
+
+    }
+
+    function visLines(){
+        draw.clear();
+        //Non-Renewables
+        //Coal -- Black
+        draw.polyline(coalDP)
+            .fill("none")
+            .stroke({width:2,color:'black'});
+        //Natural Gas -- Red
+        draw.polyline(natGasDP)
+            .fill("none")
+            .stroke({width:2,color:'red'});
+        //Oil -- Brown
+        draw.polyline(oilDP)
+            .fill("none")
+            .stroke({width:2,color:'#332501'});
+        //Other -- Light Grey
+        draw.polyline(otherDP)
+            .fill("none")
+            .stroke({width:2,color:'#999999'});
+
+        //Renewables
+        //Biomass -- Green
+        draw.polyline(bioDP)
+            .fill("none")
+            .stroke({width:2,color:'#3efe00'});
+        //Wind -- Light Blue
+        draw.polyline(windDP)
+            .fill("none")
+            .stroke({width:2,color:'#00c8fe'});
+        //Hydro -- Dark Blue
+        draw.polyline(hydroDP)
+            .fill("none")
+            .stroke({width:2,color:'#0026fe'});
+        //Solar PV -- Yellow
+        draw.polyline(solarDP)
+            .fill("none")
+            .stroke({width:2,color:'#ebfe00'});
+        //Geothermal -- Orange
+        draw.polyline(solarDP)
+            .fill("none")
+            .stroke({width:2,color:'#fe7b00'});
+
+
+    }
+
+    function infoLines(){
+        for(i = 0; i <= 10; i ++){
+            var num = height - (i*77.5);
+            //x1, y1, x2, y2
+            var flatlines = draw.line(xmargin,height - ymargin - Math.round(i * lineDis), 635,height - ymargin - Math.round(i * lineDis))
+                    .stroke({width: 1, color:'#bebebe'})
+            draw.text(""+ i*10 + "%")
+                .move(635,height - ymargin - (i * 53.5))
+                .size(12)
+        }
+        dataSet.forEach(function (d,i){
+            var year = d.Year;
+            if(d.State == "AUS"){
+                console.log("FUCK YOU")
+                console.log(year)
+                draw.text(year + "")
+                    .move((xmargin/2) + i *xscale, height-5)
+                    .font({size:9,color:'black'})
+            }
+
+        })
+    }
+
+    function legendCreation(){
+       //Ask how to make text bold.
+       //Non-renewables
+        draw.text('Non-Renewables').move(width-100,height-550)
+            .font({size:12, anchor:'start',weight:'bold'});
+
+        draw.text('Coal').move(width-75,height-535)
+            .font({size:12, anchor:'start',});
+        draw.circle(11).move(width-88,height-536).fill('black');
+
+        draw.text('Natural Gas').move(width-75,height-520)
+            .font({size:12, anchor:'start'});
+        draw.circle(11).move(width-88,height-521).fill('red');
+
+        draw.text('Oil').move(width-75,height-505)
+            .font({size:12, anchor:'start'});
+        draw.circle(11).move(width-88,height-506).fill('#332501');
+
+        draw.text('Other').move(width-75,height-490)
+            .font({size:12, anchor:'start'});
+        draw.circle(11).move(width-88,height-491).fill('#999999');
+
+        //Renewables
+        draw.text('Renewables').move(width-100,height-475)
+            .font({size:12, anchor:'start',weight:'bold'});
+
+        draw.text('Biomass').move(width-75,height-460)
+            .font({size:12, anchor:'start'});
+        draw.circle(11).move(width-88,height-461).fill('#3efe00');
+
+        draw.text('Wind').move(width-75,height-445)
+            .font({size:12, anchor:'start'});
+        draw.circle(11).move(width-88,height-446).fill('#00c8fe');
+
+        draw.text('Hydro').move(width-75,height-430)
+            .font({size:12, anchor:'start'});
+        draw.circle(11).move(width-88,height-431).fill('#0026fe');
+
+        draw.text('Solar').move(width-75,height-415)
+            .font({size:12, anchor:'start'});
+        draw.circle(11).move(width-88,height-416).fill('#ebfe00');
+
+        draw.text('Geothermal').move(width-75,height-400)
+            .font({size:12, anchor:'start'});
+        draw.circle(11).move(width-88,height-401).fill('#fe7b00');
+
+    }
+    var recipeState;
+    var recipeYear;
+
+    function grabCurrentDropDown(){
+        var s = document.getElementById("stateRSelection");
+        recipeState = s.options[s.selectedIndex].value;
+        var y = document.getElementById('yearRSelection');
+        recipeYear = y.options[y.selectedIndex].value;
+    }
+
+    var coffee;
+    var hundreds;
+    var maple;
+    var vanilla;
+
+    var coriander;
+    var lemon;
+    var cumin;
+    var garlic;
+    var paprika;
+
+
+
+    function recipeCreation(){
+        draw2.clear();
+        grabCurrentDropDown()
+        //Non-Renewables
+        var coal;
+        var naturalGas;
+        var oil;
+        var other;
+        //Renewables
+        var biomass;
+        var wind;
+        var hydro;
+        var solar;
+        var geothermal;
+
+            dataSet.forEach(function (d, i) {
+                if(recipeState == d.State && recipeYear == d.Year){
+                    //Coffee = Coal
+                    coal = d.Coal;
+                    //Hundreds and Thousands = Nat Gas
+                    naturalGas = d.Natural_Gas;
+                    //Maple Syrup = Oil
+                    oil = d.Oil;
+                    //Vanilla Essence = Other
+                    other = d.Other;
+                    //Coriander = Biomass
+                    biomass = d.Biomass;
+                    //Lemon = Wind
+                    wind = d.Wind;
+                    //Cumin = Hydro
+                    hydro = d.Hydro;
+                    //Garlic = Solar PV
+                    solar = d.Solar_PV;
+                    //Paprika = Geothermal
+                    geothermal = d.Geothermal;
+                }
+
+            })
+
+        coffee = (Math.round(coal/5)*5)/10;
+        hundreds = (Math.round(naturalGas/5)*5)/10;;
+        maple = (Math.round(oil/5)*5)/10;;
+        vanilla = (Math.round(other/5)*5)/10;;
+
+        coriander = (Math.round(biomass/5)*5)/10;;
+        lemon = (Math.round(wind/5)*5)/10;;
+        cumin = (Math.round(hydro/5)*5)/10;;
+        garlic = (Math.round(solar/5)*5)/10;;
+        paprika = (Math.round(geothermal/5)*5)/10;;
+        //Non-Renewables
+        if(coal > 10) {
+            document.getElementById("recipeList").innerHTML += ('<li id="coffee">' + coffee + ' teaspoons of coffee powder' + '</li>')
+        }else if(coal > 2.5){
+            document.getElementById("recipeList").innerHTML +=('<li id="coffee">'+ coffee + ' teaspoon of coffee powder' + '</li>');
+        }
+        if(naturalGas > 10){
+            document.getElementById("recipeList").innerHTML += ('<li id="hundreds">' + hundreds + ' teaspoons of Hundreds and Thousands' + '</li>')
+        }else if(naturalGas > 2.5){
+            document.getElementById("recipeList").innerHTML += ('<li id="hundreds">' + hundreds + ' teaspoon of Hundreds and Thousands' + '</li>')
+        }
+
+        if(oil > 10){
+            document.getElementById("recipeList").innerHTML += ('<li id="maple">' + maple + ' teaspoons of maple syrup' + '</li>')
+            }else if(oil > 2.5){
+            document.getElementById("recipeList").innerHTML += ('<li id="maple">' + maple + ' teaspoon of maple syrup' + '</li>')
+        }
+        if(other > 10) {
+            document.getElementById("recipeList").innerHTML += ('<li id="vanilla">' + vanilla + ' teaspoons of vanilla essence' + '</li>')
+        }else if(other > 2.5){
+            document.getElementById("recipeList").innerHTML += ('<li id="vanilla">' + vanilla + ' teaspoon of vanilla essence' + '</li>')
+        }
+
+        //Renewables
+        if(biomass > 10){
+            document.getElementById("recipeList").innerHTML += ('<li id="coriander">' + coriander + ' teaspoons of coriander' + '</li>')
+        } else if(biomass > 2.5){
+            document.getElementById("recipeList").innerHTML += ('<li id="coriander">' + coriander + ' teaspoon of coriander' + '</li>')
+        }
+
+        if (wind > 10){
+            document.getElementById("recipeList").innerHTML += ('<li id="lemon">' + lemon + ' teaspoons of lemon juice' + '</li>')
+        } else if (wind > 2.5){
+            document.getElementById("recipeList").innerHTML += ('<li id="lemon">' + lemon + ' teaspoon of lemon juice' + '</li>')
+        }
+
+        if(hydro > 10){
+            document.getElementById("recipeList").innerHTML += ('<li id="cumin">' + cumin + ' teaspoons of cumin powder' + '</li>')
+        } else if(hydro > 2.5){
+            document.getElementById("recipeList").innerHTML += ('<li id="cumin">' + cumin + ' teaspoon of cumin powder' + '</li>')
+        }
+
+        if(solar > 10){
+            document.getElementById("recipeList").innerHTML += ('<li id="garlic">' + garlic + ' teaspoons of garlic powder' + '</li>')
+        } else if (solar > 2.5){
+            document.getElementById("recipeList").innerHTML += ('<li id="garlic">' + garlic + ' teaspoons of garlic powder' + '</li>')
+        }
+        if(geothermal > 10){
+            document.getElementById("recipeList").innerHTML += ('<li id="paprika">' + paprika + ' teaspoons of paprika powder' + '</li>')
+
+        } else if(geothermal > 2.5){
+            document.getElementById("recipeList").innerHTML += ('<li id="paprika">' + paprika + ' teaspoons of paprika powder' + '</li>')
+        }
+
+
+    }
+    recipeCreation();
+
+    function recipeRemoval(){
+        var list = document.getElementById("recipeList");
+
+        var coffee = document.getElementById('coffee');
+        if(list.contains(coffee)) {
+            list.removeChild(coffee);
+        }
+        var hundreds = document.getElementById('hundreds');
+        if(list.contains(hundreds)) {
+            list.removeChild(hundreds);
+        }
+        var maple = document.getElementById('maple');
+        if(list.contains(maple)) {
+            list.removeChild(maple);
+        }
+
+        var vanilla = document.getElementById('vanilla');
+        if(list.contains(vanilla)) {
+            list.removeChild(vanilla);
+        }
+        var coriander = document.getElementById('coriander');
+        if(list.contains(coriander)) {
+            list.removeChild(coriander);
+        }
+        var lemon = document.getElementById('lemon');
+        if(list.contains(lemon)) {
+            list.removeChild(lemon);
+        }
+        var cumin = document.getElementById('cumin');
+        if(list.contains(cumin)) {
+            list.removeChild(cumin);
+        }
+        var garlic = document.getElementById('garlic');
+        if(list.contains(garlic)) {
+            list.removeChild(garlic);
+        }
+        var paprika = document.getElementById('paprika');
+        if(list.contains(paprika)) {
+            list.removeChild(paprika);
+        }
+
+    }
+
+
+</script>
+</body>
+</html>

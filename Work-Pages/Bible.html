@@ -4,32 +4,34 @@
     <meta charset="UTF-8">
     <title>Bible Photogrammetry</title>
     <link rel="stylesheet" href="../stylesheet.css">
+    <!--  This JavaScript Code is not mine and i don't understand how it work as it is very advanced
+      It was taken from: https://modelviewer.dev/ This is developed by Google and anyone can use it
+      I had to copy the whole code to a different file as Partch does not allow me to link out to external code
+      But the source for the JavaScript is: https://unpkg.com/@google/model-viewer@2.0.2/dist/model-viewer.min.js -->
+  <script type="module" src="../model-view.js"></script>
+  <!--    <link rel="stylesheet" href="https://use.typekit.net/nvs2mys.css">-->
 </head>
 <body>
 <header>
     <nav class = "nav">
         <!--    Refer to index.html for comments on nav bar-->
         <ul class = "nav_list">
-            <li class = "nav-list-item"><a href="Home.html">Home</a> </li>
-            <li class = "nav-list-item"><a href="Passion.html">About Me</a>
+            <li class = "nav-list-item"><a href="../Home.html">Home</a> </li>
+            <li class = "nav-list-item"><a href="../Passion.html">About Me</a>
                 <ul class = "dropdown">
-                    <li><a href="Passion.html">About Me</a> </li>
-                    <li><a href="Resume.html">Resume</a> </li>
+                    <li><a href="../Passion.html">About Me</a> </li>
+                    <li><a href="../Resume.html">Resume</a> </li>
                 </ul>
             </li>
-            <li class = "nav-list-item"><a href="Home.html">Kyle Robertson</a> </li>
-            <li class = "nav-list-item"><a href="Portfolio.html">Portfolio</a>
+            <li class = "nav-list-item"><a href="../Home.html">Kyle Robertson</a> </li>
+            <li class = "nav-list-item"><a href="../Portfolio.html">Portfolio</a>
                 <ul class = "dropdown">
-                    <li><a href="Work.html">Work</a> </li>
-                    <li><a href="photography.html">Photography</a> </li>
-                    <li><a href="creative.html">Creative</a></li>
+                    <li><a href="../Work.html">Work</a> </li>
+                    <li><a href="../photography.html">Photography</a> </li>
+                    <li><a href="../creative.html">Creative</a></li>
                 </ul>
             </li>
-            <li class = "nav-list-item"><a href="Form.html">Contact Me</a>
-                <ul class = "dropdown">
-                    <li><a href="Form.html">Form</a> </li>
-                    <li><a href="social-media.html">Social Media</a> </li>
-                </ul>
+            <li class = "nav-list-item"><a href="../social-media.html">Contact Me</a>
             </li>
         </ul>
 
@@ -45,6 +47,67 @@
                 images of themes where pasted all over the 3D model. To show that these topics exist in the bible and they
                 are used to control people.
             </p>
+            <div id = "Hummus-Doc">
+                <p>
+                    <h2>Design Process</h2>
+                    Bible Photogrammetry
+                    This project was about creating art using a digital medium, my chosen medium was photogrammetry. 
+                    Photogrammetry is the process of taking many photographs of an object from a variety of angels and stitching them together to create a 3D model.
+                
+                    The first step in this project was to select to an object that would be the focal point of this project. 
+                    After a lot of thinking my item would be a bible as people often take the meaning in it as word and must be followed fully.
+                     Once I choose an object, I had to find a bible that would be easy to perform photogrammetry on, lucky for me my grandpa had a lot of bibles, so I borrowed one his.
+                    The next stage was setting up and environment that I could 100s of photos of the bible while keeping the camera in the same place. 
+                    <br>
+                    <span>The environment was as follows:</span>
+                    <br>
+                    <img src="../Work-Projects/photogrammetry/IMG_1024.jpg" class="process-img">
+                    <br>
+                    The reason for having a black drop was for contrast so the software could differentiate between the bible and background. 
+                    The same reason was applied to the orange book that the bible was sitting on. 
+                    Finally, the bible was sitting on a rotating tray so I could easily take photos of the bible from every angle. 
+                    This worked by rotating the tray by a couple degrees then taking a photo as seen below:
+                    <br>
+                    <div class="image-row ">
+                        <img src="../Work-Projects/photogrammetry/IMG_1026.jpg" class="process-img">
+                        <img src="../Work-Projects/photogrammetry/IMG_1027.jpg" class="process-img">
+                    </div>
+                    <br>
+                    Once all the photos were taken they were loaded into a software called Agisoft, which takes all the images and places them in the correct place to generate a 3D model. 
+                    There are numerous stages to developing a 3D model from images, those stages are
+                    <ul>
+                        <li>adding photos</li>
+                        <li>aligning photos</li>
+                        <li>building mesh cloud</li>
+                        <li>building higher quality mesh cloud</li>
+                        <li>building the texture</li>
+                        <li>finally building the model</li>
+                    </ul>
+                     During this stages there were many errors and failed 3D models that would be too long to add here, but I failed numerous times in the process of developing the final model.
+                    Once the model was created then I found the mesh of the 3D model and altered it by removing sections of the mesh and adding different images into those sections. 
+                    Thus creating the mesh with the images on them, left is original mesh and right is the new mesh. 
+                    <br>
+                    <div class="image-row ">
+                        <img src="../Work-Projects/photogrammetry/Biblev3.jpg" class="process-img">
+                        <img src="../Work-Projects/photogrammetry/Biblev3-3.jpg" class="process-img">
+                    </div>
+                    <div class="text-row">
+                        <p>
+                            Old Mesh
+                        </p>
+                        <p>
+                            New Mesh
+                        </p>
+                    </div>
+                    <br>
+                    Lastly I applied the new to mesh to the 3D model into unity and placed the model in the 3D environment that you see in the pictures.
+                    
+                </p>
+            </div>
+
+
+
+
             <div id = "bible-gallery">
                 <!--                Gallery set up for images so people can see the work-->
                 <img src="../Work-Projects/photogrammetry/GayMarriage1.png" alt = "Front of a Bible with gay marriage images on it">
@@ -52,6 +115,20 @@
                 <img src="../Work-Projects/photogrammetry/Abortion1.png" alt = "Front of a Bible with abortion protest images on it">
                 <img src="../Work-Projects/photogrammetry/Abortion2.png" alt = "Front of a Bible with abortion protest images on it">
             </div>
+
+
+            <div class = "viewer">
+                <h1>3D Model Viewer</h1>
+                <p>This is a 3D model that I created for one of my design classes
+                    <br>
+                  <br>
+                    The viewer was created by Google, the link for more information is <a href="https://modelviewer.dev/">https://modelviewer.dev/</a>
+                  <br>
+                    This does take a while to load, due to the file size of the 3D model.
+          
+                </p>
+              <model-viewer src = "../BackDrop.glb" camera-controls></model-viewer>
+                </div>
         </div>
 
 

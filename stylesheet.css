@@ -203,7 +203,7 @@ textarea{
     width: 40%;
     font-family: mainfont, serif;
 }
-h1,h2,h3,h4{
+h1,h2,h3,h4,h5{
     font-family: myfont, serif;
 }
 
@@ -533,6 +533,56 @@ th,tr,table{
     width: 24.75vw;
     height: auto;
 }
+.image-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1vh;
+    width: 50vw;
+    justify-content: center; 
+}
+.image-row img{
+        /*Setting size to allow for 2 images in the row*/
+        width: 24.75vw;
+        height: auto;
+}
+.text-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40vh;
+    justify-content: center;
+}
+#Hummus-Doc{
+    text-align:left;
+}
+#Hummus-Doc span{
+    text-decoration: underline;
+}
+#Hummus-Doc img{
+    margin: 1vh 0;
+}
+#Hummus-Doc{
+    font-family: mainfont, serif;
+}
+#centre{
+    text-align: center !important;
+}
+#Hummus-Doc h1,h2,h3,h4,h5{
+    text-align: center;
+}
+#math-div{
+    text-align: center;
+}
+.iterations{
+    margin: 0;
+}
+.process-img{
+    width: 20vw !important; 
+    height: auto !important;
+}
+
+
 .chill-spots-container{
     /*Centring horizontally */
     margin: 0 auto;

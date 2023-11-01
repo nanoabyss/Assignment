@@ -10,26 +10,22 @@
     <nav class = "nav">
         <!--    Refer to index.html for comments on nav bar-->
         <ul class = "nav_list">
-            <li class = "nav-list-item"><a href="Home.html">Home</a> </li>
-            <li class = "nav-list-item"><a href="Passion.html">About Me</a>
+            <li class = "nav-list-item"><a href="../Home.html">Home</a> </li>
+            <li class = "nav-list-item"><a href="../Passion.html">About Me</a>
                 <ul class = "dropdown">
-                    <li><a href="Passion.html">About Me</a> </li>
-                    <li><a href="Resume.html">Resume</a> </li>
+                    <li><a href="../Passion.html">About Me</a> </li>
+                    <li><a href="../Resume.html">Resume</a> </li>
                 </ul>
             </li>
-            <li class = "nav-list-item"><a href="Home.html">Kyle Robertson</a> </li>
-            <li class = "nav-list-item"><a href="Portfolio.html">Portfolio</a>
+            <li class = "nav-list-item"><a href="../Home.html">Kyle Robertson</a> </li>
+            <li class = "nav-list-item"><a href="../Portfolio.html">Portfolio</a>
                 <ul class = "dropdown">
-                    <li><a href="Work.html">Work</a> </li>
-                    <li><a href="photography.html">Photography</a> </li>
-                    <li><a href="creative.html">Creative</a></li>
+                    <li><a href="../Work.html">Work</a> </li>
+                    <li><a href="../photography.html">Photography</a> </li>
+                    <li><a href="../creative.html">Creative</a></li>
                 </ul>
             </li>
-            <li class = "nav-list-item"><a href="Form.html">Contact Me</a>
-                <ul class = "dropdown">
-                    <li><a href="Form.html">Form</a> </li>
-                    <li><a href="social-media.html">Social Media</a> </li>
-                </ul>
+            <li class = "nav-list-item"><a href="../social-media.html">Contact Me</a>
             </li>
         </ul>
 
@@ -40,19 +36,157 @@
 <!--        Div for content of the page arranged using flex-->
         <div class="wrk-pg-content">
             <h2>Eating Energy</h2>
-            <p> Eating Energy was a group project created by myself and Gwen during our university studies to explore
+            <p> 
+                Eating Energy was a group project created by myself and Gwen during our university studies to explore
                 the energy consumption by Australian states then broken down by energy types.
                 Then from the energy consumed to create a hummus recipe that represented the amount of energy type
                 that was consumed. If a fossil fuel was used a bad tasting ingredient was added, if a renewable
                 energy was used a good tasting ingredient was added to the recipe. The goal of this project was
                 to physically express the energy consumption of each Australian State, so people could understand
-                how much fossil fuel vs renewable energy was used.</p>
-                <h3><a href="../Work-Projects/Eating%20Energy/EnergyCode-Ver3.html" class = "wrk-links">Link</a> </h3>
+                how much fossil fuel vs renewable energy was used.
+                </p>
+                <h3><a href="../Work-Projects/Eating%20Energy/EnergyCode-Ver3.html" class = "wrk-links">Link to project</a> </h3>
+            <div class="image-row">
+                <img src="../Work-Projects/Eating%20Energy/images/image2.png" alt = "Hummus and Bread">
+                <img src="../Work-Projects/Eating%20Energy/images/image4.png" alt = "Hummus and Bread">
+            </div>
+                <div id ="Hummus-Doc">
+                    <p>
+                    <h2>Documentation</h2>
+                    <h4>Data Collection Stage</h4>
+                    <h5>Data Source</h5>
+                        
+The data source for the data used in this visualisation was:
+<a href="https://www.energy.gov.au/publications/australian-energy-statistics-table-o-electricity-generation-fuel-type-2018-19-and-2019">Data Source</a>
+<br>
+The data was collected by the Australian Department of Industry, Science, Energy and resources, from the time period of 2008-2019 for all states. 
+It didn’t have data for the ACT individually, the reason for this was that the ACT is a part of the NSW power grid so it is hard to distinguish between NSW and ACT power.
+
+The data contain 10 types of energy production broken down into non-renewables and renewables. 
+For the non-renewables there was Black coal, brown coal, Natural Gas, Oil products and other. 
+For renewables there was Biomass, wind, hydro, Large scale solar PV, small scale solar PV and geothermal.
+<h5>Problem Encountered:</h5>
+<span>The no individual data for ACT:</span>
+<br>
+The reason behind this is that the ACT power grid is part of the NSW power grid so it hard to distinguish the difference between NSW and ACT energy consumption. 
+We solved this problem by simply not adding ACT to the visualisation. We came to this decision after looking for ACT energy data and not finding any. 
+Also consulting with Mitchell with what he thought the best cause of action would be and he agreed to just remove ACT from the visualisation.
+<br>
+<br>
+<span>Not enough data for fuel consumption:</span>
+<br>
+The problem here was that the data for fuel consumption was not fully accessible which caused us not to have access to enough data to create a visualisation. 
+It was not fully accessible because it was not the raw data that we required to create a visualisation. 
+The solution that we came up with was to remove the fuel consumption element from our visualisation. 
+This was a good solution in the long run because if we had both energy and fuel, I feel that it would have been to much information for the reader.
+<h5>Data Manipulation:</h5>
+The data manipulation that occurred was transforming the data value into percentages of the total amount of electricity consumed for each type of energy compared to the total energy consumed in that state. 
+The excel document below is an example of the data being manipulated into percentage.
+<br>
+<a href="../Work-Projects/Eating Energy/Final Data Build CSV ver 4.csv" id="centre">Excel document</a>
+<br>
+The second data manipulation that happened was the combining of brown coal with black coal, the reason for this was that I though that people would understand just coal better than two types of coal. 
+I did so that people would have an easier time understand the types. 
+Another reason for this was also that there was already a lot of types and did not want to have unnecessary columns in the data.
+I also did the same thing with solar PV in the sense that I combine Large-scale solar PV and small-scale solar PV for the simplicity of the visualisation.
+A data manipulation that did occur but was removed was the conversion of the percentage data into percentage of 15 grams. 
+For example if the percentage was 90% before the conversion it was changed to 13.5 grams. 
+This idea was originally created to figure out the amount of each ingredient to be used in the recipe. 
+But we scrapped this idea because when we tried in real life we found that it was hard to get the correct amount of each ingredient. 
+This was due to the fact that we trying to get half a gram of coffee powder for example, which would be extremely hard to exactly get half a gram. 
+So we scrapped the idea for whole or half team spoon, this manipulation was done it code and will be explained in that section.
+
+<h4>Recipe Creation</h4>
+The recipe creation went through numerous variations, the first variation was just using SVG text to draw the text on the screen, line after line. 
+This did not really look at good because it didn’t really look like a list which most ingredients come in. So I scrapped the idea of using SVG text for the ingredients.
+The second variation utilised the ability to write JavaScript code to add and remove elements from a HTML list. 
+So I used the HTML listen to write the ingredients on. Below is an example of the JavaScript code.
+<img src="../Work-Projects/Eating Energy/images/code.png">
+<br>
+A problem encountered with this was that I had to remove and add elements back each time the state or year was called. 
+So this required me to write two separate function a recipeCreation() and recipeRemoval(). 
+The recipeRemoval was called first and removed all elements from this that were not base element of chickpeas, water and Turkish bread. 
+The recipeCreation was called second and added all the ingredients that were required for that state and year. 
+<br>
+
+To figure out the correct number of tablespoons I just did some basic math on each of the columns in the data that rounded them to the nearest 5 and then be divided by 10 to get the correct number of tablespoons.
+<div id = "math-div">
+<br>
+<span>The math: </span>
+<br>
+(Math.round(variable/5)*5)/10
+<br>
+An example of this is coal at 92
+<br>
+92/5 = 18.4
+<br>
+Then round to nearest whole number which is 18
+<br>
+18*5 =90
+<br>
+Then divided by 10
+<br>
+90/10 = 9
+<br>
+So we get 9 tablespoons of coffee powder.
+<br>
+
+</div>
+
+
+<h4>Coding Section</h4>
+The coding section of the visualisation included the creation of the website using HTML, CSS and JavaScript.
+<br>
+<span>Elements of the website</span>
+<ul>
+    <li>Photos of some example of the final recipe being fully made</li>
+    <li>Description of the idea</li>
+    <li>Visualisation of the data</li>
+    <li>A recipe generator.</li>
+</ul>
+<span>Visualisation:</span>
+<br>
+The visualisation was heavily based off my visualisation done for the air quality during COVID lock down. 
+Which was a line graph with ability to change the state data. The reason for this is that they both follow the same design and have the same base functionality.
+The only problems that occurred was making drawing the lines which shows the percentage value. 
+This was a problem because I accidentally drew the lines in the wrong position at first and then I fixed the data.
+<br>
+<span>The colour palette for the non-renewable energy in the visualisation:</span>
+<img src="../Work-Projects/Eating Energy/images/Non-Renewables colour Palette.PNG">
+<br>
+<span>The colour palette for the renewable energy in the visualisation:</span>
+<img src="../Work-Projects/Eating Energy/images/Renewable Colour Palette.PNG">
+<br>
+
+<span>Website Design:</span>
+<br>
+Design of website was heavily influenced by the design of Data cuisines website, the reason for this is that they have had many years of experience the field of data visualisation using food as the medium of presentation.
+From these years of experience, they have learnt/developed an effective way to display these online. 
+The way they design the website highlights the food not so much the data.
+I used this as a base, but I modified slightly through the fact that their website does not have a recipe generator a graph of the visualisation.
+So, I used the base model but then added these elements to it.
+<br>
+This the link for their website: <a href="http://data-cuisine.net/">http://data-cuisine.net/</a>
+<br>
+The website design encountered a couple problems, those problems were mainly just CSS and HTML errors. 
+They were all over come with just some research on how to fix those problems. 
+An example of this would be some text would not be centred, ruining the overall design. 
+This was fixed by looking up example of how to centre text using CSS and HTML.
+<br>
+<span>Website Iterations</span>
+<br>
+<a href="../Work-Projects/Eating Energy/EnergyCode.html"><h5 class="iterations">Iteration 1</h5></a>
+<br>
+<a href="../Work-Projects/Eating Energy/EnergyCode-Ver2.html"><h5 class="iterations">Iteration 2</h5></a>
+<br>
+<a href="../Work-Projects/Eating Energy/EnergyCode-Ver3.html"><h5 class="iterations">Final interation</h5></a>
+</p>
+                </div>
+                
             <div id = "bible-gallery">
 <!--                Gallery set up for images so people can see the work - reused from the bible page as they have the
                     same number of pictures-->
-                <img src="../Work-Projects/Eating%20Energy/images/image2.png" alt = "Hummus and Bread">
-                <img src="../Work-Projects/Eating%20Energy/images/image4.png" alt = "Hummus and Bread">
+
                 <img src="../Work-Projects/Eating%20Energy/images/hummas_AUS_2014.png" alt = "Hummus and Bread">
                 <img src="../Work-Projects/Eating%20Energy/images/hummas_NSW_2008.png" alt = "Hummus and bread">
             </div>
