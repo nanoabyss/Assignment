@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Australian Exchange Rate from Jan 2020 to Jul 2020</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+</head>
+<body>
+<div id="drawing">
+
+</div>
+    <script type="text/javascript">
+        //data from: https://www.rba.gov.au/statistics/historical-data.html#exchange-rates
+        var data = [{"Date":"02/01/2020","United_States":0.7003,"Euro":0.6252,"England":0.5302,"New_Zealand":1.0421,"Canada":0.9098,"":""},{"Date":"03/01/2020","United_States":0.6966,"Euro":0.6236,"England":0.5307,"New_Zealand":1.0444,"Canada":0.9051,"":"","marker":"China notifies WHO of COVID"},{"Date":"04/01/2020","United_States":0.6945,"Euro":0.622,"England":0.5308,"New_Zealand":1.0439,"Canada":0.9012,"":""},{"Date":"05/01/2020","United_States":0.6928,"Euro":0.6191,"England":0.526,"New_Zealand":1.0385,"Canada":0.8984,"":""},{"Date":"06/01/2020","United_States":0.6871,"Euro":0.6163,"England":0.5236,"New_Zealand":1.0342,"Canada":0.8921,"":""},{"Date":"07/01/2020","United_States":0.6873,"Euro":0.6184,"England":0.5243,"New_Zealand":1.034,"Canada":0.8962,"":""},{"Date":"08/01/2020","United_States":0.6873,"Euro":0.6187,"England":0.5256,"New_Zealand":1.0387,"Canada":0.8978,"":""},{"Date":"09/01/2020","United_States":0.6914,"Euro":0.6213,"England":0.5303,"New_Zealand":1.04,"Canada":0.9021,"":""},{"Date":"10/01/2020","United_States":0.6902,"Euro":0.6197,"England":0.5311,"New_Zealand":1.0418,"Canada":0.9013,"":""},{"Date":"11/01/2020","United_States":0.6899,"Euro":0.6196,"England":0.5296,"New_Zealand":1.0432,"Canada":0.9009,"":""},{"Date":"12/01/2020","United_States":0.6907,"Euro":0.6194,"England":0.5294,"New_Zealand":1.0412,"Canada":0.9009,"":""},{"Date":"13/01/2020","United_States":0.6895,"Euro":0.6194,"England":0.5275,"New_Zealand":1.0381,"Canada":0.8999,"":""},{"Date":"14/01/2020","United_States":0.6884,"Euro":0.6203,"England":0.5295,"New_Zealand":1.0396,"Canada":0.8993,"":""},{"Date":"15/01/2020","United_States":0.6865,"Euro":0.6185,"England":0.5275,"New_Zealand":1.039,"Canada":0.8964,"":""},{"Date":"16/01/2020","United_States":0.6839,"Euro":0.6171,"England":0.5243,"New_Zealand":1.0376,"Canada":0.8949,"":""},{"Date":"17/01/2020","United_States":0.6867,"Euro":0.6195,"England":0.5231,"New_Zealand":1.042,"Canada":0.904,"":""},{"Date":"18/01/2020","United_States":0.6847,"Euro":0.6197,"England":0.5218,"New_Zealand":1.0349,"Canada":0.8989,"":""},{"Date":"19/01/2020","United_States":0.6762,"Euro":0.6134,"England":0.5179,"New_Zealand":1.0332,"Canada":0.8916,"":""},{"Date":"20/01/2020","United_States":0.6774,"Euro":0.6151,"England":0.5202,"New_Zealand":1.0367,"Canada":0.8917,"":""},{"Date":"21/01/2020","United_States":0.6739,"Euro":0.6117,"England":0.5177,"New_Zealand":1.0352,"Canada":0.8898,"":"","marker":"U.S first case of COVID"},{"Date":"22/01/2020","United_States":0.6724,"Euro":0.6099,"England":0.5133,"New_Zealand":1.0367,"Canada":0.8878,"":""},{"Date":"23/01/2020","United_States":0.6696,"Euro":0.6042,"England":0.5086,"New_Zealand":1.0351,"Canada":0.8868,"":""},{"Date":"24/01/2020","United_States":0.6719,"Euro":0.6075,"England":0.5165,"New_Zealand":1.039,"Canada":0.893,"":""},{"Date":"25/01/2020","United_States":0.6738,"Euro":0.6106,"England":0.5176,"New_Zealand":1.039,"Canada":0.8955,"":""},{"Date":"26/01/2020","United_States":0.676,"Euro":0.6148,"England":0.5208,"New_Zealand":1.0439,"Canada":0.8979,"":""},{"Date":"27/01/2020","United_States":0.6718,"Euro":0.6118,"England":0.5192,"New_Zealand":1.0412,"Canada":0.8929,"":""},{"Date":"28/01/2020","United_States":0.6699,"Euro":0.6114,"England":0.5191,"New_Zealand":1.0451,"Canada":0.8906,"":""},{"Date":"29/01/2020","United_States":0.6709,"Euro":0.615,"England":0.5196,"New_Zealand":1.0501,"Canada":0.8925,"":""},{"Date":"30/01/2020","United_States":0.6728,"Euro":0.6165,"England":0.5192,"New_Zealand":1.0418,"Canada":0.8937,"":""},{"Date":"31/01/2020","United_States":0.6719,"Euro":0.6182,"England":0.5188,"New_Zealand":1.042,"Canada":0.8903,"":""},{"Date":"01/02/2020","United_States":0.6719,"Euro":0.6202,"England":0.5151,"New_Zealand":1.0448,"Canada":0.891,"":""},{"Date":"02/02/2020","United_States":0.6725,"Euro":0.6205,"England":0.5156,"New_Zealand":1.0459,"Canada":0.8903,"":""},{"Date":"03/02/2020","United_States":0.6692,"Euro":0.6179,"England":0.5149,"New_Zealand":1.0429,"Canada":0.8865,"":""},{"Date":"04/02/2020","United_States":0.6696,"Euro":0.6201,"England":0.515,"New_Zealand":1.0472,"Canada":0.887,"":""},{"Date":"05/02/2020","United_States":0.665,"Euro":0.6158,"England":0.515,"New_Zealand":1.0456,"Canada":0.8797,"":""},{"Date":"06/02/2020","United_States":0.6605,"Euro":0.6119,"England":0.5123,"New_Zealand":1.0466,"Canada":0.8752,"":""},{"Date":"07/02/2020","United_States":0.6609,"Euro":0.6108,"England":0.5108,"New_Zealand":1.0451,"Canada":0.8766,"":""},{"Date":"08/02/2020","United_States":0.6614,"Euro":0.609,"England":0.5112,"New_Zealand":1.0427,"Canada":0.8788,"":""},{"Date":"09/02/2020","United_States":0.6596,"Euro":0.6069,"England":0.5079,"New_Zealand":1.0442,"Canada":0.8759,"":""},{"Date":"10/02/2020","United_States":0.6555,"Euro":0.6007,"England":0.5069,"New_Zealand":1.0413,"Canada":0.8748,"":""},{"Date":"11/02/2020","United_States":0.6524,"Euro":0.5934,"England":0.5063,"New_Zealand":1.0453,"Canada":0.8773,"":""},{"Date":"12/02/2020","United_States":0.6522,"Euro":0.59,"England":0.5085,"New_Zealand":1.0479,"Canada":0.8706,"":""},{"Date":"13/02/2020","United_States":0.6552,"Euro":0.5879,"England":0.5127,"New_Zealand":1.0458,"Canada":0.874,"":""},{"Date":"14/02/2020","United_States":0.6595,"Euro":0.5908,"England":0.5147,"New_Zealand":1.0508,"Canada":0.8807,"":""},{"Date":"15/02/2020","United_States":0.662,"Euro":0.5943,"England":0.5142,"New_Zealand":1.0508,"Canada":0.8869,"":""},{"Date":"16/02/2020","United_States":0.6602,"Euro":0.5878,"England":0.5096,"New_Zealand":1.0456,"Canada":0.8851,"":""},{"Date":"17/02/2020","United_States":0.6539,"Euro":0.5735,"England":0.5003,"New_Zealand":1.0449,"Canada":0.8922,"":""},{"Date":"18/02/2020","United_States":0.6566,"Euro":0.5772,"England":0.5026,"New_Zealand":1.0401,"Canada":0.8958,"":""},{"Date":"19/02/2020","United_States":0.6505,"Euro":0.5738,"England":0.5032,"New_Zealand":1.0345,"Canada":0.8911,"":"","marker":"Global Death toll surpasses 2,000"},{"Date":"20/02/2020","United_States":0.6457,"Euro":0.5716,"England":0.5039,"New_Zealand":1.0318,"Canada":0.8899,"":""},{"Date":"21/02/2020","United_States":0.6307,"Euro":0.5621,"England":0.5023,"New_Zealand":1.027,"Canada":0.8762,"":""},{"Date":"22/02/2020","United_States":0.6176,"Euro":0.5547,"England":0.5006,"New_Zealand":1.02,"Canada":0.8561,"":""},{"Date":"23/02/2020","United_States":0.6121,"Euro":0.5475,"England":0.4995,"New_Zealand":1.0116,"Canada":0.8555,"":""},{"Date":"24/02/2020","United_States":0.6018,"Euro":0.5456,"England":0.4968,"New_Zealand":1.0101,"Canada":0.8537,"":""},{"Date":"25/02/2020","United_States":0.5571,"Euro":0.5112,"England":0.4845,"New_Zealand":1.0043,"Canada":0.8147,"":""},{"Date":"26/02/2020","United_States":0.5853,"Euro":0.5437,"England":0.5018,"New_Zealand":1.0172,"Canada":0.8418,"":""},{"Date":"27/02/2020","United_States":0.5762,"Euro":0.5366,"England":0.4945,"New_Zealand":1.0205,"Canada":0.8319,"":""},{"Date":"28/02/2020","United_States":0.5912,"Euro":0.548,"England":0.508,"New_Zealand":1.0225,"Canada":0.853,"":""},{"Date":"29/02/2020","United_States":0.6007,"Euro":0.5556,"England":0.5089,"New_Zealand":1.0242,"Canada":0.8637,"":""},{"Date":"01/03/2020","United_States":0.5931,"Euro":0.5437,"England":0.5003,"New_Zealand":1.0145,"Canada":0.8445,"":"","marker":"Australia's first COVID related death"},{"Date":"02/03/2020","United_States":0.6102,"Euro":0.5518,"England":0.498,"New_Zealand":1.0221,"Canada":0.8553,"":""},{"Date":"03/03/2020","United_States":0.615,"Euro":0.555,"England":0.4962,"New_Zealand":1.0197,"Canada":0.8641,"":""},{"Date":"04/03/2020","United_States":0.6175,"Euro":0.5605,"England":0.5006,"New_Zealand":1.0257,"Canada":0.8767,"":""},{"Date":"05/03/2020","United_States":0.6124,"Euro":0.5559,"England":0.4947,"New_Zealand":1.0286,"Canada":0.8641,"":""},{"Date":"06/03/2020","United_States":0.6081,"Euro":0.5556,"England":0.4908,"New_Zealand":1.0249,"Canada":0.8615,"":""},{"Date":"07/03/2020","United_States":0.6072,"Euro":0.5599,"England":0.4903,"New_Zealand":1.0269,"Canada":0.8603,"":""},{"Date":"08/03/2020","United_States":0.6035,"Euro":0.5574,"England":0.4927,"New_Zealand":1.0239,"Canada":0.8539,"":""},{"Date":"09/03/2020","United_States":0.6145,"Euro":0.5674,"England":0.5004,"New_Zealand":1.0272,"Canada":0.8634,"":""},{"Date":"10/03/2020","United_States":0.6146,"Euro":0.5647,"England":0.4981,"New_Zealand":1.0291,"Canada":0.8623,"":""},{"Date":"11/03/2020","United_States":0.6211,"Euro":0.5722,"England":0.5022,"New_Zealand":1.035,"Canada":0.8725,"":""},{"Date":"12/03/2020","United_States":0.6419,"Euro":0.5868,"England":0.511,"New_Zealand":1.0494,"Canada":0.8909,"":""},{"Date":"13/03/2020","United_States":0.6384,"Euro":0.5823,"England":0.5071,"New_Zealand":1.0554,"Canada":0.8885,"":"","marker":"U.S in state of National Emergency"},{"Date":"14/03/2020","United_States":0.6286,"Euro":0.5775,"England":0.5036,"New_Zealand":1.0551,"Canada":0.8871,"":""},{"Date":"15/03/2020","United_States":0.636,"Euro":0.5853,"England":0.5092,"New_Zealand":1.0579,"Canada":0.8922,"":""},{"Date":"16/03/2020","United_States":0.6346,"Euro":0.5846,"England":0.5094,"New_Zealand":1.051,"Canada":0.8941,"":""},{"Date":"17/03/2020","United_States":0.6314,"Euro":0.5824,"England":0.5089,"New_Zealand":1.0529,"Canada":0.894,"":""},{"Date":"18/03/2020","United_States":0.6323,"Euro":0.5825,"England":0.5142,"New_Zealand":1.0574,"Canada":0.8979,"":""},{"Date":"19/03/2020","United_States":0.6341,"Euro":0.5854,"England":0.5129,"New_Zealand":1.0614,"Canada":0.896,"":""},{"Date":"20/03/2020","United_States":0.6343,"Euro":0.5893,"England":0.5141,"New_Zealand":1.06,"Canada":0.8939,"":""},{"Date":"21/03/2020","United_States":0.6462,"Euro":0.5957,"England":0.5193,"New_Zealand":1.0648,"Canada":0.9089,"":""},{"Date":"22/03/2020","United_States":0.6457,"Euro":0.5965,"England":0.5198,"New_Zealand":1.0746,"Canada":0.9074,"":""},{"Date":"23/03/2020","United_States":0.6542,"Euro":0.6027,"England":0.5241,"New_Zealand":1.0716,"Canada":0.9115,"":"","marker":"Australia starts to lockdown"},{"Date":"24/03/2020","United_States":0.6566,"Euro":0.6043,"England":0.5261,"New_Zealand":1.0676,"Canada":0.9104,"":""},{"Date":"25/03/2020","United_States":0.6459,"Euro":0.5899,"England":0.5143,"New_Zealand":1.0608,"Canada":0.9054,"":""},{"Date":"26/03/2020","United_States":0.6382,"Euro":0.584,"England":0.5132,"New_Zealand":1.06,"Canada":0.9021,"":""},{"Date":"27/03/2020","United_States":0.6459,"Euro":0.5921,"England":0.518,"New_Zealand":1.0634,"Canada":0.907,"":""},{"Date":"28/03/2020","United_States":0.6449,"Euro":0.595,"England":0.5186,"New_Zealand":1.0623,"Canada":0.9053,"":""},{"Date":"29/03/2020","United_States":0.6426,"Euro":0.5954,"England":0.5211,"New_Zealand":1.0676,"Canada":0.9073,"":""},{"Date":"30/03/2020","United_States":0.653,"Euro":0.6023,"England":0.5267,"New_Zealand":1.0665,"Canada":0.9103,"":""},{"Date":"31/03/2020","United_States":0.6543,"Euro":0.6035,"England":0.527,"New_Zealand":1.0669,"Canada":0.9109,"":""},{"Date":"01/04/2020","United_States":0.6477,"Euro":0.5992,"England":0.5253,"New_Zealand":1.0656,"Canada":0.9088,"":""},{"Date":"02/04/2020","United_States":0.6473,"Euro":0.5966,"England":0.5273,"New_Zealand":1.0754,"Canada":0.9099,"":""},{"Date":"03/04/2020","United_States":0.6434,"Euro":0.5954,"England":0.5276,"New_Zealand":1.0756,"Canada":0.9075,"":""},{"Date":"04/04/2020","United_States":0.6455,"Euro":0.5974,"England":0.5287,"New_Zealand":1.078,"Canada":0.9067,"":""},{"Date":"05/04/2020","United_States":0.6429,"Euro":0.5942,"England":0.5314,"New_Zealand":1.0809,"Canada":0.9057,"":""},{"Date":"06/04/2020","United_States":0.652,"Euro":0.5973,"England":0.5344,"New_Zealand":1.078,"Canada":0.9098,"":""},{"Date":"07/04/2020","United_States":0.6551,"Euro":0.5986,"England":0.5342,"New_Zealand":1.0729,"Canada":0.9122,"":""},{"Date":"08/04/2020","United_States":0.6556,"Euro":0.5986,"England":0.5379,"New_Zealand":1.0725,"Canada":0.914,"":""},{"Date":"09/04/2020","United_States":0.6541,"Euro":0.5986,"England":0.5354,"New_Zealand":1.0709,"Canada":0.9161,"":""},{"Date":"10/04/2020","United_States":0.6529,"Euro":0.5997,"England":0.5362,"New_Zealand":1.0716,"Canada":0.9136,"":""},{"Date":"11/04/2020","United_States":0.6577,"Euro":0.6022,"England":0.5382,"New_Zealand":1.072,"Canada":0.9166,"":"","marker":"U.S most has the COVID deaths"},{"Date":"12/04/2020","United_States":0.664,"Euro":0.6059,"England":0.5391,"New_Zealand":1.0724,"Canada":0.9155,"":""},{"Date":"13/04/2020","United_States":0.6612,"Euro":0.6004,"England":0.5393,"New_Zealand":1.0682,"Canada":0.9101,"":""},{"Date":"14/04/2020","United_States":0.6659,"Euro":0.5998,"England":0.5394,"New_Zealand":1.0718,"Canada":0.9165,"":""},{"Date":"15/04/2020","United_States":0.6742,"Euro":0.6052,"England":0.5441,"New_Zealand":1.0794,"Canada":0.925,"":""},{"Date":"16/04/2020","United_States":0.6803,"Euro":0.611,"England":0.5442,"New_Zealand":1.0817,"Canada":0.9207,"":""},{"Date":"17/04/2020","United_States":0.694,"Euro":0.6194,"England":0.5515,"New_Zealand":1.0825,"Canada":0.9368,"":""},{"Date":"18/04/2020","United_States":0.6906,"Euro":0.6157,"England":0.5508,"New_Zealand":1.0754,"Canada":0.933,"":""},{"Date":"19/04/2020","United_States":0.7,"Euro":0.6157,"England":0.554,"New_Zealand":1.0771,"Canada":0.9433,"":""},{"Date":"20/04/2020","United_States":0.6995,"Euro":0.6195,"England":0.5501,"New_Zealand":1.0683,"Canada":0.9367,"":""},{"Date":"21/04/2020","United_States":0.6997,"Euro":0.6158,"England":0.5481,"New_Zealand":1.0679,"Canada":0.9363,"":""},{"Date":"22/04/2020","United_States":0.6929,"Euro":0.6107,"England":0.5468,"New_Zealand":1.0671,"Canada":0.9339,"":""},{"Date":"23/04/2020","United_States":0.6867,"Euro":0.6072,"England":0.5451,"New_Zealand":1.0655,"Canada":0.934,"":""},{"Date":"24/04/2020","United_States":0.679,"Euro":0.604,"England":0.5441,"New_Zealand":1.0618,"Canada":0.9279,"":""},{"Date":"25/04/2020","United_States":0.6946,"Euro":0.6127,"England":0.5483,"New_Zealand":1.0726,"Canada":0.94,"":""},{"Date":"26/04/2020","United_States":0.6882,"Euro":0.6105,"England":0.5482,"New_Zealand":1.0673,"Canada":0.9319,"":""},{"Date":"27/04/2020","United_States":0.687,"Euro":0.6106,"England":0.5475,"New_Zealand":1.0661,"Canada":0.9321,"":""},{"Date":"28/04/2020","United_States":0.6861,"Euro":0.6118,"England":0.5512,"New_Zealand":1.0689,"Canada":0.9327,"":""},{"Date":"29/04/2020","United_States":0.686,"Euro":0.6127,"England":0.5542,"New_Zealand":1.0674,"Canada":0.9328,"":""},{"Date":"30/04/2020","United_States":0.6897,"Euro":0.6126,"England":0.5541,"New_Zealand":1.0668,"Canada":0.9349,"":""},{"Date":"01/05/2020","United_States":0.6943,"Euro":0.6136,"England":0.555,"New_Zealand":1.0743,"Canada":0.9411,"":""},{"Date":"02/05/2020","United_States":0.6875,"Euro":0.6113,"England":0.5537,"New_Zealand":1.0704,"Canada":0.9381,"":""},{"Date":"03/05/2020","United_States":0.6888,"Euro":0.6138,"England":0.5542,"New_Zealand":1.0689,"Canada":0.9394,"":""},{"Date":"04/05/2020","United_States":0.6879,"Euro":0.6114,"England":0.5559,"New_Zealand":1.0693,"Canada":0.9399,"":""},{"Date":"05/05/2020","United_States":0.6863,"Euro":0.6111,"England":0.5586,"New_Zealand":1.0703,"Canada":0.9387,"":""},{"Date":"06/05/2020","United_States":0.6895,"Euro":0.6143,"England":0.5574,"New_Zealand":1.0695,"Canada":0.9363,"":""},{"Date":"07/05/2020","United_States":0.6924,"Euro":0.6146,"England":0.5545,"New_Zealand":1.0656,"Canada":0.9424,"":""},{"Date":"08/05/2020","United_States":0.693,"Euro":0.6168,"England":0.5559,"New_Zealand":1.0632,"Canada":0.9401,"":""},{"Date":"09/05/2020","United_States":0.6972,"Euro":0.6174,"England":0.5578,"New_Zealand":1.0633,"Canada":0.9432,"":""},{"Date":"10/05/2020","United_States":0.6958,"Euro":0.6153,"England":0.5568,"New_Zealand":1.0621,"Canada":0.9433,"":""},{"Date":"11/05/2020","United_States":0.6941,"Euro":0.6156,"England":0.5528,"New_Zealand":1.0603,"Canada":0.9443,"":""},{"Date":"12/05/2020","United_States":0.6986,"Euro":0.6147,"England":0.553,"New_Zealand":1.0614,"Canada":0.9436,"":""},{"Date":"13/05/2020","United_States":0.6931,"Euro":0.615,"England":0.5508,"New_Zealand":1.0577,"Canada":0.9437,"":""},{"Date":"14/05/2020","United_States":0.6978,"Euro":0.6159,"England":0.5512,"New_Zealand":1.0615,"Canada":0.9464,"":""},{"Date":"15/05/2020","United_States":0.6942,"Euro":0.6122,"England":0.5533,"New_Zealand":1.0628,"Canada":0.9458,"":""},{"Date":"16/05/2020","United_States":0.7,"Euro":0.614,"England":0.5566,"New_Zealand":1.0684,"Canada":0.9521,"":""},{"Date":"17/05/2020","United_States":0.6993,"Euro":0.6133,"England":0.5569,"New_Zealand":1.066,"Canada":0.9444,"":""},{"Date":"18/05/2020","United_States":0.6982,"Euro":0.6135,"England":0.5562,"New_Zealand":1.0673,"Canada":0.9486,"":""},{"Date":"19/05/2020","United_States":0.6987,"Euro":0.6101,"England":0.5572,"New_Zealand":1.0659,"Canada":0.949,"":""},{"Date":"20/05/2020","United_States":0.704,"Euro":0.6152,"England":0.5552,"New_Zealand":1.0709,"Canada":0.9508,"":""},{"Date":"21/05/2020","United_States":0.7152,"Euro":0.6198,"England":0.5621,"New_Zealand":1.0742,"Canada":0.9614,"":""},{"Date":"22/05/2020","United_States":0.7151,"Euro":0.6173,"England":0.5613,"New_Zealand":1.0705,"Canada":0.9582,"":""},{"Date":"23/05/2020","United_States":0.7086,"Euro":0.6107,"England":0.5564,"New_Zealand":1.0691,"Canada":0.9509,"":""},{"Date":"24/05/2020","United_States":0.7129,"Euro":0.6093,"England":0.5558,"New_Zealand":1.0687,"Canada":0.9544,"":""},{"Date":"25/05/2020","United_States":0.7141,"Euro":0.6085,"England":0.5552,"New_Zealand":1.0721,"Canada":0.9546,"":""},{"Date":"26/05/2020","United_States":0.7165,"Euro":0.6106,"England":0.5545,"New_Zealand":1.0761,"Canada":0.9579,"":""},{"Date":"27/05/2020","United_States":0.7159,"Euro":0.6088,"England":0.5523,"New_Zealand":1.079,"Canada":0.957,"":"","marker":"U.S COVID Deaths pass 100,000"},{"Date":"28/05/2020","United_States":0.7213,"Euro":0.6067,"England":0.5497,"New_Zealand":1.0762,"Canada":0.9689,"":""},{"Date":"29/05/2020","United_States":0.7132,"Euro":0.6062,"England":0.5456,"New_Zealand":1.0783,"Canada":0.9544,"":""},{"Date":"30/05/2020","United_States":0.7181,"Euro":0.6084,"England":0.549,"New_Zealand":1.0821,"Canada":0.9547,"":""},{"Date":"31/05/2020","United_States":0.7207,"Euro":0.6065,"England":0.5488,"New_Zealand":1.0846,"Canada":0.9556,"":""},{"Date":"01/06/2020","United_States":0.7207,"Euro":0.6085,"England":0.5491,"New_Zealand":1.0805,"Canada":0.9622,"":""},{"Date":"02/06/2020","United_States":0.7165,"Euro":0.6075,"England":0.5482,"New_Zealand":1.0841,"Canada":0.9585,"":""},{"Date":"03/06/2020","United_States":0.7177,"Euro":0.6109,"England":0.5484,"New_Zealand":1.0845,"Canada":0.9566,"":""},{"Date":"04/06/2020","United_States":0.7118,"Euro":0.6072,"England":0.5462,"New_Zealand":1.0872,"Canada":0.9492,"":""},{"Date":"05/06/2020","United_States":0.7172,"Euro":0.6071,"England":0.5486,"New_Zealand":1.092,"Canada":0.9495,"":""},{"Date":"06/06/2020","United_States":0.7157,"Euro":0.6055,"England":0.5476,"New_Zealand":1.0943,"Canada":0.9457,"":"","marker":"Lowest cases since February\n in Australia"},{"Date":"07/06/2020","United_States":0.7183,"Euro":0.6056,"England":0.5485,"New_Zealand":1.099,"Canada":0.9517,"":""},{"Date":"08/06/2020","United_States":0.7225,"Euro":0.6076,"England":0.55,"New_Zealand":1.1037,"Canada":0.9528,"":""},{"Date":"09/06/2020","United_States":0.7249,"Euro":0.6073,"England":0.5473,"New_Zealand":1.0955,"Canada":0.954,"":""},{"Date":"10/06/2020","United_States":0.7172,"Euro":0.6056,"England":0.548,"New_Zealand":1.0935,"Canada":0.9484,"":""},{"Date":"11/06/2020","United_States":0.7204,"Euro":0.6063,"England":0.544,"New_Zealand":1.1012,"Canada":0.9485,"":""},{"Date":"12/06/2020","United_States":0.7178,"Euro":0.6081,"England":0.5479,"New_Zealand":1.0976,"Canada":0.9448,"":""},{"Date":"13/06/2020","United_States":0.7174,"Euro":0.6076,"England":0.5477,"New_Zealand":1.1,"Canada":0.9493,"":""},{"Date":"14/06/2020","United_States":0.7193,"Euro":0.6089,"England":0.5478,"New_Zealand":1.0978,"Canada":0.9483,"":""},{"Date":"15/06/2020","United_States":0.7237,"Euro":0.6117,"England":0.548,"New_Zealand":1.0922,"Canada":0.952,"":""},{"Date":"16/06/2020","United_States":0.7299,"Euro":0.6148,"England":0.5503,"New_Zealand":1.0945,"Canada":0.9556,"":""},{"Date":"17/06/2020","United_States":0.7354,"Euro":0.6178,"England":0.5512,"New_Zealand":1.0922,"Canada":0.9621,"":""},{"Date":"18/06/2020","United_States":0.7412,"Euro":0.618,"England":0.5524,"New_Zealand":1.0956,"Canada":0.9637,"":""},{"Date":"19/06/2020","United_States":0.736,"Euro":0.6181,"England":0.5501,"New_Zealand":1.0847,"Canada":0.9612,"":""},{"Date":"20/06/2020","United_States":0.7306,"Euro":0.6191,"England":0.5495,"New_Zealand":1.083,"Canada":0.9557,"":""},{"Date":"21/06/2020","United_States":0.727,"Euro":0.6134,"England":0.5476,"New_Zealand":1.0846,"Canada":0.9543,"":""},{"Date":"22/06/2020","United_States":0.7279,"Euro":0.6154,"England":0.5508,"New_Zealand":1.0863,"Canada":0.9535,"":""},{"Date":"23/06/2020","United_States":0.7289,"Euro":0.6172,"England":0.5545,"New_Zealand":1.089,"Canada":0.9554,"":""},{"Date":"24/06/2020","United_States":0.7225,"Euro":0.6133,"England":0.5574,"New_Zealand":1.0901,"Canada":0.9562,"":""},{"Date":"25/06/2020","United_States":0.728,"Euro":0.6155,"England":0.5596,"New_Zealand":1.0885,"Canada":0.9565,"":""},{"Date":"26/06/2020","United_States":0.7281,"Euro":0.6151,"England":0.5675,"New_Zealand":1.0924,"Canada":0.9587,"":""},{"Date":"27/06/2020","United_States":0.7287,"Euro":0.6147,"England":0.568,"New_Zealand":1.0874,"Canada":0.9588,"":""},{"Date":"28/06/2020","United_States":0.7328,"Euro":0.616,"England":0.5697,"New_Zealand":1.0897,"Canada":0.9631,"":""}];
+
+        //setting globals variables that will be used throughout the whole code.
+        var height = 850;
+        var width = 1000;
+        var draw = SVG('drawing').size(width,height)
+
+
+        var yscale = 600;
+        var xscale = 5;
+        var xmargin = 20;
+
+        var US = [];
+        var Euro = [];
+        var England = [];
+        var NZ = [];
+        var Canada = [];
+
+        var months = ["Jan","Feb","Mar","Apr","May","Jun"];
+
+        //function for creating the lines on the visualisation.
+        function lines() {
+            data.forEach(function (d, i) {//iterating through the data set.
+                var daynum = +d.Date.split("/")[0]; // first number in the date
+                var monthnum = +d.Date.split("/")[1]; // the month
+                if (daynum == 1) { // mark the start of the month
+                    draw.text(months[monthnum-1])
+                        .move(xmargin + i * xscale, height - 10)
+                        .font({size: 12, color: '#444'});
+
+                } //placing Jan because the other function checks for the first day and this dataset starts on the 2nd
+                //so created this to Jan will be place on the 2nd so people can understand the timeline better.
+                if(monthnum == 1 && daynum == 2){
+                    draw.text(months[monthnum-1])
+                        .move(xmargin + i * xscale, height - 10)
+                        .font({size: 12, color: '#444'});
+                }
+                //placing markers on the screen, used Mitchell's code to do this because it was the easiest and it worked
+                //quite well.
+                if (d.marker) { // this data point has a marker
+                    draw.text(d.marker)
+                        .move(xmargin + i * xscale, 75) //Setting the position so it is in the correct place.
+                        .font({size: 11, anchor: 'start'})
+                        .rotate(-18) //stops the overlaps of the text
+                    draw.line(xmargin + i * xscale, 100, xmargin + i * xscale, height) //Drawing the lines fully on the graph.
+                        .stroke({color: '#aaa', dasharray: '3 6'});
+
+                }
+            })
+            //making the flatlines for the dollar amounts.
+            var num = 0;
+            for(var i=0 ;i<750 ;i+=60) {
+                console.log(i);
+                var flatLines = draw.line(xmargin, height - i , width - xmargin-13, height - i)
+                    .stroke({width: 2, color:'#bebebe'});
+                if (i == 0){
+                    flatLines.stroke({width:2, color:'#000'});
+                }
+                if(num > 0) {
+                    var lineValues = draw.text('' + num / 10)
+                        .move(width - 30, height - i - 3.5)
+                        .font({size: 12, color: '#000'});
+                }
+                num = num +1 ;
+            }
+
+        }
+        //setting the title
+        draw.text("Australian Exchange Rate from Jan 2020 to Jul 2020").move(250, 10).font({size:20, anchor:'center'})
+        //creating a static legend so the reader can understand what is happening.
+        function legendCreation(){
+            draw.text('United States,\nA$1=USD').move(xmargin+(data.length-1)*xscale+12,height-444)
+                .font({size:11,anchor:'start'});
+            draw.circle(10).move(xmargin+(data.length-1)*xscale-3,height-444).fill('blue');
+            //placing the circle at the end of the line and then placing the currency next to it.
+
+            draw.text('New Zealand,\nA$1=NZD').move(xmargin+(data.length-1)*xscale+12,height-656)
+                .font({size:11,anchor:'start'});
+            draw.circle(10).move(xmargin+(data.length-1)*xscale-3,height-658).fill('black');
+
+            draw.text('England,\nA$1=GBP').move(xmargin+(data.length-1)*xscale+12,height-347)
+                .font({size:11,anchor:'start'});
+            draw.circle(10).move(xmargin+(data.length-1)*xscale-3,height-347).fill('green');
+
+            draw.text('Canada,\nA$1=CAD').move(xmargin+(data.length-1)*xscale+12,height-582)
+                .font({size:11,anchor:'start'});
+            draw.circle(10).move(xmargin+(data.length-1)*xscale-3,height-582).fill('red');
+
+            draw.text('Euro,\nA$1=EUR').move(xmargin+(data.length-1)*xscale+12,height-375)
+                .font({size:11,anchor:'start'});
+            draw.circle(10).move(xmargin+(data.length-1)*xscale-3,height-375).fill("yellow");
+
+        }
+
+
+        data.forEach(function (d,i){ // d = data point, i = index
+            //setting the line coordinates for each currency and making sure that they sit at the correct positions.
+            USdp = [xmargin + i*xscale, height-d.United_States*yscale];
+            US.push(USdp)
+
+            NZdp = [xmargin + i*xscale, height-d.New_Zealand*yscale];
+            NZ.push(NZdp)
+
+            edp = [xmargin + i*xscale, height-d.Euro*yscale];
+            Euro.push(edp)
+
+            cadp = [xmargin + i*xscale, height-d.Canada*yscale];
+            Canada.push(cadp)
+
+            endp = [xmargin + i*xscale, height-d.England*yscale];
+            England.push(endp)
+
+        })
+        drawlines();
+        lines();
+        legendCreation();
+        //drawing the lines
+        function drawlines(){
+            draw.polyline(US)
+                .fill("none")
+                .stroke({width:2,color:'blue'});
+            draw.polyline(NZ)
+                .fill("none")
+                .stroke({width:2,color:'black'});
+            draw.polyline(Euro)
+                .fill("none")
+                .stroke({width:2,color:'yellow'});
+            draw.polyline(Canada)
+                .fill("none")
+                .stroke({width:2,color:'red'});
+            draw.polyline(England)
+                .fill("none")
+                .stroke({width:2,color:'green'});
+
+        }
+
+    </script>
+
+
+</body>
+</html>

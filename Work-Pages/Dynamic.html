@@ -10,26 +10,21 @@
     <nav class = "nav">
         <!--    Refer to index.html for comments on nav bar-->
         <ul class = "nav_list">
-            <li class = "nav-list-item"><a href="Home.html">Home</a> </li>
-            <li class = "nav-list-item"><a href="Passion.html">About Me</a>
+            <li class = "nav-list-item"><a href="../Home.html">Home</a> </li>
+            <li class = "nav-list-item"><a href="../Passion.html">About Me</a>
                 <ul class = "dropdown">
-                    <li><a href="Passion.html">About Me</a> </li>
-                    <li><a href="Resume.html">Resume</a> </li>
+                    <li><a href="../Passion.html">About Me</a> </li>
+                    <li><a href="../Resume.html">Resume</a> </li>
                 </ul>
             </li>
-            <li class = "nav-list-item"><a href="Home.html">Kyle Robertson</a> </li>
-            <li class = "nav-list-item"><a href="Portfolio.html">Portfolio</a>
+            <li class = "nav-list-item"><a href="../Home.html">Kyle Robertson</a> </li>
+            <li class = "nav-list-item"><a href="../Portfolio.html">Portfolio</a>
                 <ul class = "dropdown">
-                    <li><a href="Work.html">Work</a> </li>
-                    <li><a href="photography.html">Photography</a> </li>
-                    <li><a href="creative.html">Creative</a></li>
+                    <li><a href="../Work.html">Work</a> </li>
+                    <li><a href="../photography.html">Photography</a> </li>
                 </ul>
             </li>
-            <li class = "nav-list-item"><a href="Form.html">Contact Me</a>
-                <ul class = "dropdown">
-                    <li><a href="Form.html">Form</a> </li>
-                    <li><a href="social-media.html">Social Media</a> </li>
-                </ul>
+            <li class = "nav-list-item"><a href="../social-media.html">Contact Me</a>
             </li>
         </ul>
 
@@ -46,14 +41,57 @@
                 had to be dynamic meaning they could generate a new logo if they desired. This project was created in
                 p5.js using JavaScript.
             </p>
-            <p>Example Banner</p>
-            <img src="../Work-Projects/Dynamic%20Identity/Banner.png " alt = "National Arboretum Canberra Logo">
-<!--            Link to download the PDF of the project-->
-            <a href="../Work-Projects/Dynamic%20Identity/DESN2002%20Dynamic%20identity%20Kyle%20Ahmaz%20and%20Yasmin.pdf"
-            class = "wrk-links">
-            <h4>Download Link for the report</h4>
-            </a>
+            <div id ="Hummus-Doc">
+                    <p>
+                        <h2>Documentation</h2>
+                        Dynamic Identities was a group project completed during university. For the group we split the work up between us, 
+                        the work was split in the following way.
+                        <ul>
+                            <li>Kyle: Coding, Code Planning, mock-ups and research.</li>
+                            <li>Ahmaz: Coding, implementing the p5.svg.js library to manipulate SVGs and research.</li>
+                            <li>Yasmin: Coding, stylistic choices, research, hand generated sketches and mock-ups.</li>
 
+                        </ul>
+                        The first step of the project was developing an initial sketch of The National Arboretum from a bird-eyes view.
+                        <br>
+                        <div class="image-row">
+                            <div class = "image-row-div">
+                                <img src="../Work-Projects/Dynamic Identity/inital1.PNG">
+                                <div class = "image-row-item">
+                                    <p>Sktech 1</p>
+                                </div>
+                            </div>
+                            <div class = "image-row-div">
+                                <img src="../Work-Projects/Dynamic Identity/inital2.PNG">
+                                <div class = "image-row-item">
+                                    <p>Sketch 2</p>
+                                </div>
+                            </div>
+                        </div>
+                        From this revised sketch we took elements to create the generative/dynamic identity. Like all the different line types and dots. 
+                        <h3>Stylistic decisions</h3>
+                        Once the sketch was completed, we moved onto the decision about fonts and colour palette. 
+                        For this, 4 colour palettes were generated to represent all the seasons as a goal of the project was to represent the season in the identity. 
+                        We also decided upon the font to be used for the identity.
+                        The next stage of the project and the longest was the code development inside p5.js to create dynamic identities.
+                        There is little documentation of the process on this stage as we just iterated on inside p5.js to create the final product.
+                        <br>
+                        <span>The code libraries can be found here:</span>
+                        <br>
+                        <ul>
+                            <li><a href="https://editor.p5js.org/kylerobertson98/sketches/yve-wpy6j">https://editor.p5js.org/kylerobertson98/sketches/yve-wpy6j</a></li>
+                            <li><a href="https://editor.p5js.org/yasroussidis/sketches/3V2GmZw1E">https://editor.p5js.org/yasroussidis/sketches/3V2GmZw1E</a></li>
+                            <li><a href="https://editor.p5js.org/yasroussidis/sketches/Pdnwginzs">https://editor.p5js.org/yasroussidis/sketches/Pdnwginzs</a></li>
+
+                        </ul>
+                        The final stage was generating a report as part of the assignment, I did not contribute a lot to this section as I was mainly coding and creating the dynamic identity. But a link copy of the report can be found here:
+                        <a href="../Work-Projects/Dynamic%20Identity/DESN2002%20Dynamic%20identity%20Kyle%20Ahmaz%20and%20Yasmin.pdf"
+                        class = "wrk-links">
+                        <h4>Download Link for the report</h4>
+                        </a>
+                    </p>
+
+        </div>
         </div>
 
 
@@ -66,10 +104,14 @@
 
 
         <footer class="footer">
-            <a href="mailto:u6671630@anu.edu.au">Contact Me</a>
+            <div class = "footer-icons">
             <a href="https://www.instagram.com/kylerobertson_98/">
                 <img src="../Instagram.svg" class = "insta" alt = "Instagram Logo">
             </a>
+            <a href="https://www.linkedin.com/in/kyle-robertson-80b311235/">
+                <img src="../linkedin.svg" class="insta">
+            </a>
+        </div>
             <div class="footer-links">
                 <a href="../Source-log.html">Source Log</a>
                 <a href="../sitemap.html">Site Map</a>

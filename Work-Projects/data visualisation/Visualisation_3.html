@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unemployment Rate by State: 2020 vs 2019"</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+</head>
+<body>
+    <select id = "stateSelection" onchange="stateFocus(value), stateFocus2(value)">
+        <option value="NSW">New South Wales</option>
+        <option value="VIC">Victoria</option>
+        <option value="QLD">Queensland</option>
+        <option value="SA">South Australia</option>
+        <option value="WA">Western Australia</option>
+        <option value="TAS">Tasmania</option>
+        <option value="NT">Northern Territory</option>
+        <option value="ACT">Australian Capital Territory</option>
+        <option value="Total">Australia</option>
+    </select>
+
+<div id="drawing">
+
+</div>
+    <script type="text/javascript">
+    // data from : https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/6202.0Jul%202020?OpenDocument
+    //data sets for 2020 & 2019 unemployment rate by month up until July.
+    var data2020 =
+        [{"Date":"Jan-2020","NSW":4.5,"VIC":5.3,"QLD":6.2,"SA":5.7,"WA":5.7,"TAS":5.8,"NT":5,"ACT":2.9,"Total":5.3},
+        {"Date":"Feb-2020","NSW":4.6,"VIC":5.3,"QLD":5.6,"SA":5.7,"WA":5.2,"TAS":4.9,"NT":5.8,"ACT":2.7,"Total":5.1},
+        {"Date":"Mar-2020","NSW":4.9,"VIC":5.2,"QLD":5.6,"SA":6.3,"WA":5.4,"TAS":4.9,"NT":5.5,"ACT":3.2,"Total":5.2},
+        {"Date":"Apr-2020","NSW":6.3,"VIC":6,"QLD":7,"SA":7.2,"WA":6.1,"TAS":6.2,"NT":5.6,"ACT":4.3,"Total":6.4},
+        {"Date":"May-2020","NSW":6.4,"VIC":6.9,"QLD":7.8,"SA":7.9,"WA":8.1,"TAS":6.3,"NT":7.4,"ACT":4.1,"Total":7.1},
+        {"Date":"Jun-2020","NSW":6.9,"VIC":7.5,"QLD":7.7,"SA":8.8,"WA":8.7,"TAS":6.9,"NT":5.7,"ACT":5.1,"Total":7.4},
+        {"Date":"Jul-2020","NSW":7.2,"VIC":6.8,"QLD":8.8,"SA":7.9,"WA":8.3,"TAS":6,"NT":7.5,"ACT":4.6,"Total":7.5}];
+
+    var data2019 =
+        [{"Date":"01/01/2020","NSW":4,"VIC":4.6,"QLD":6,"SA":6.4,"WA":6.7,"TAS":6.9,"NT":5,"ACT":3.3,"Total":5},
+        {"Date":"01/02/2020","NSW":4.3,"VIC":4.7,"QLD":5.6,"SA":5.7,"WA":6,"TAS":6.5,"NT":4.8,"ACT":3.1,"Total":5},
+        {"Date":"01/03/2020","NSW":4.3,"VIC":4.6,"QLD":6.1,"SA":5.9,"WA":5.9,"TAS":6.6,"NT":3.7,"ACT":3.6,"Total":5.1},
+        {"Date":"01/04/2020","NSW":4.5,"VIC":4.9,"QLD":5.9,"SA":6.1,"WA":6,"TAS":6.8,"NT":4.4,"ACT":4.9,"Total":5.2},
+        {"Date":"01/05/2020","NSW":4.6,"VIC":4.6,"QLD":6.3,"SA":5.8,"WA":6.2,"TAS":6.4,"NT":5,"ACT":4.3,"Total":5.2},
+        {"Date":"01/06/2020","NSW":4.6,"VIC":4.8,"QLD":6.4,"SA":6.1,"WA":5.8,"TAS":6.7,"NT":4.6,"ACT":2.8,"Total":5.2},
+        {"Date":"01/07/2020","NSW":4.4,"VIC":4.8,"QLD":6.3,"SA":6.8,"WA":5.9,"TAS":5.9,"NT":5.6,"ACT":3.5,"Total":5.2}];
+
+    //setting variables to be used throughout the code.
+    var height = 525;
+    var width = 900;
+    var draw = SVG('drawing').size(width,height)
+
+
+    var baseline = 505;
+    var yscale = 50;
+    var xscale = 5;
+    var xmargin = 20;
+    var xWidth = 80;
+    var xspacing = 100;
+
+    var bars2020 = [];
+    var bars2019 = [];
+
+    var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul"];
+    //hardcoding title location
+    draw.text("Unemployment Rate by State: 2020 vs 2019")
+        .move(270,10)
+        .font({size: 18});
+    //calling functions to be ran
+    lines();
+    legendCreation();
+
+    //Loop for 2020 data.
+    data2020.forEach((d,i)=>{
+        var rectWidth = xWidth/2;
+        var rectHeight = 0;
+        var rect =
+            draw.rect(rectWidth,rectHeight)
+                .move(80 +xmargin+i*xspacing, baseline- rectHeight)
+                .fill('#01579B');
+        //adding rectangles to the a list for animation.
+        bars2020.push(rect);
+
+       rect.data = d; //setting the data for the column to the data from the dataset.
+       rect.on('mouseover',showInfo); //Checking for the mouse entering the columns space
+       rect.on('mouseleave',hideInfo20) //checking for the mouse leaving the column's space.
+
+    })
+    //setting a variable to be changed later, used this so it can be called outside the function.
+    var info = draw.text("").font({'size':'11px','anchor':'middle','weight':'bold'});
+    //function to show the percentage of unemployment when hovering over a certain column.
+    function showInfo(){
+        //Talked about later in the code.
+        var e = document.getElementById("stateSelection");
+        var stateValue = e.options[e.selectedIndex].value;
+        this.fill('#aaa');
+      //had to use a switch case to show the data because the this.data wasn't taking stateValue because i think
+        // it doesn't like dynamic variables
+       switch (stateValue){
+            case "NSW":
+                //setting the text for the label, just pulling the info from the data set, also setting the location of
+                // the label to sit just above the column.
+                info.text(""+ this.data.NSW + "%")
+                    .move(this.x()+23,this.y()-20)
+                break;
+            case "QLD":
+                info.text(""+ this.data.QLD + "%")
+                    .move(this.x()+23,this.y()-20)
+                break;
+            case "WA":
+                info.text(""+ this.data.QLD + "%")
+                    .move(this.x()+23,this.y()-20)
+                break;
+            case "SA":
+                info.text(""+ this.data.SA + "%")
+                    .move(this.x()+23,this.y()-20)
+                break;
+            case "ACT":
+                info.text(""+ this.data.ACT + "%")
+                    .move(this.x()+23,this.y()-20)
+                break;
+            case "VIC":
+                info.text(""+ this.data.VIC + "%")
+                    .move(this.x()+23,this.y()-20)
+                break;
+            case "TAS":
+                info.text(""+ this.data.TAS + "%")
+                    .move(this.x()+23,this.y()-20)
+                break;
+            case "NT":
+                info.text(""+ this.data.NT + "%")
+                    .move(this.x()+23,this.y()-20)
+                break;
+            case "Total":
+                info.text(""+ this.data.Total + "%")
+                    .move(this.x()+23,this.y()-20)
+                break;
+
+        }
+    }
+    //created two different functions because the columns have different colours and i felt this was the easiest way to
+    //solve the problem.
+    function hideInfo20(){
+        info.text('');
+        this.fill('#01579B')
+    }
+
+    function hideInfo19(){
+        info.text('');
+        this.fill('#29B6F6');
+    }
+
+    //ability to change the state.
+    function stateFocus(state){
+        bars2020.forEach((a,i)=>{
+            var d = data2020[i][state];
+            a.animate(500)
+                .height(d*yscale)
+                .y(baseline-d*yscale)
+        })
+    }
+    //same as 2020 functions
+    data2019.forEach((d,i)=>{
+        var rectWidth = xWidth/2;
+        var rectHeight = 0;
+        var rect =
+            draw.rect(rectWidth,rectHeight)
+                .move(110 + xmargin+i*xspacing, baseline- rectHeight)
+                .fill('#29B6F6');
+        console.log("2019 Positions "+ (130 + xmargin+i*xspacing));
+        bars2019.push(rect);
+
+        rect.data = d;
+        rect.on('mouseover',showInfo)
+        rect.on('mouseleave',hideInfo19)
+
+    })
+
+    function stateFocus2(state){
+        bars2019.forEach((a,i)=>{
+            var d = data2019[i][state];
+            a.animate(500)
+                .height(d*yscale)
+                .y(baseline-d*yscale)
+        })
+    }
+    //setting default data visualisation.
+    //setting a variable to be the select function from HTML
+    var e = document.getElementById("stateSelection");
+    //getting the current value for select/drop menu.
+    var stateValue = e.options[e.selectedIndex].value;
+    //calling the focus to set the current value for reload reasons.
+    stateFocus(stateValue);
+
+    stateFocus2(stateValue);
+    //function to draw all the lines on the screen.
+    function lines() {
+        //setting the location of the months so they match with the correct columns
+        months.forEach((d,i)=>{
+            draw.text(""+ d)
+                .move(120+i*xspacing, 505)
+                .font({size:15});
+
+        })
+
+        //loop to draw the guide lines so you can get an idea of the values.
+        var num = 0;
+        for (var i = 0; i < 750; i += 50) {
+            var flatLines = draw.line(xmargin, baseline - i, width - xmargin - 13, baseline - i)
+                .stroke({width: 2, color: '#bebebe'});
+            if (i == 0) {
+                flatLines.stroke({width: 2, color: '#000'});
+            }
+            if(num > 0) {
+                var lineValues = draw.text('' + num + "%")
+                    .move(width - 30, baseline - i - 3.5)
+                    .font({size: 12, color: '#000'});
+            }
+            num = num + 1;
+        }
+    }
+    //Hardcoded legend locations.
+    function legendCreation(){
+        draw.text('2020').move(width-60,height-513)
+            .font({size:14,anchor:'start'});
+        draw.rect(20,20).move(width-85,height-517).fill('#01579B');
+
+        draw.text('2019').move(width-60,height-490)
+            .font({size:14,anchor:'start'});
+        draw.rect(20,20).move(width-85,height-494).fill('#29B6F6');
+
+    }
+    </script>
+</body>
+</html>

@@ -10,26 +10,21 @@
     <nav class = "nav">
         <!--    Refer to index.html for comments on nav bar-->
         <ul class = "nav_list">
-            <li class = "nav-list-item"><a href="Home.html">Home</a> </li>
-            <li class = "nav-list-item"><a href="Passion.html">About Me</a>
+            <li class = "nav-list-item"><a href="../Home.html">Home</a> </li>
+            <li class = "nav-list-item"><a href="../Passion.html">About Me</a>
                 <ul class = "dropdown">
-                    <li><a href="Passion.html">About Me</a> </li>
-                    <li><a href="Resume.html">Resume</a> </li>
+                    <li><a href="../Passion.html">About Me</a> </li>
+                    <li><a href="../Resume.html">Resume</a> </li>
                 </ul>
             </li>
-            <li class = "nav-list-item"><a href="Home.html">Kyle Robertson</a> </li>
-            <li class = "nav-list-item"><a href="Portfolio.html">Portfolio</a>
+            <li class = "nav-list-item"><a href="../Home.html">Kyle Robertson</a> </li>
+            <li class = "nav-list-item"><a href="../Portfolio.html">Portfolio</a>
                 <ul class = "dropdown">
-                    <li><a href="Work.html">Work</a> </li>
-                    <li><a href="photography.html">Photography</a> </li>
-                    <li><a href="creative.html">Creative</a></li>
+                    <li><a href="../Work.html">Work</a> </li>
+                    <li><a href="../photography.html">Photography</a> </li>
                 </ul>
             </li>
-            <li class = "nav-list-item"><a href="Form.html">Contact Me</a>
-                <ul class = "dropdown">
-                    <li><a href="Form.html">Form</a> </li>
-                    <li><a href="social-media.html">Social Media</a> </li>
-                </ul>
+            <li class = "nav-list-item"><a href="../social-media.html">Contact Me</a>
             </li>
         </ul>
 
@@ -38,19 +33,79 @@
 <div id = "page-container">
     <div id = "wrapper">
         <div class="wrk-pg-content">
-            <!--        Div for content of the page arranged using flex-->
-            <h2>Bible Photogrammetry</h2>
-            <p>Bible Photogrammetry was a university project in which I explored photogrammetry to make a commentary
-                on themes of control expressed/interpreted from the Bible. The way the themes were explored was that
-                images of themes where pasted all over the 3D model. To show that these topics exist in the bible and they
-                are used to control people.
-            </p>
-            <div id = "bible-gallery">
-                <!--                Gallery set up for images so people can see the work-->
-                <img src="../Work-Projects/photogrammetry/GayMarriage1.png" alt = "Front of a Bible with gay marriage images on it">
-                <img src="../Work-Projects/photogrammetry/GayMarriage2.png" alt = "Front of a Bible with gay marriage images on it">
-                <img src="../Work-Projects/photogrammetry/Abortion1.png" alt = "Front of a Bible with abortion protest images on it">
-                <img src="../Work-Projects/photogrammetry/Abortion2.png" alt = "Front of a Bible with abortion protest images on it">
+            <div id ="Hummus-Doc">
+                <h2>Interactive Map</h2>
+                This assignment I focused on creating an interactive map that highlights locations around Canberra that students are interested in. 
+                <h2>Documentation</h2>
+                This project like some other was broken down into two major sections. First section being project development/ideation and the second being the creation of the idea.
+                For the idea development for this project there was no really set process as we could create a project around any idea we wanted if it solved some issue. The issue I wanted to solve was trying to improve the overall perception of Canberra to ANU students. 
+                For development of the project it first start with researching. This research included a survey and general tourism statistics.
+                The survey was based around where current ANU students have visited in Canberra so I can highlight other areas of Canberra that have been less visited. After the research I started to brainstorm some ideas to choose a final way to present the project.  
+                <div class="image-row">
+                    <div class = "image-row-div">
+                        <img src="../Work-Projects/interactive-map/results.png">
+                        <div class = "image-row-item">
+                            <p>Results</p>
+                        </div>
+                    </div>
+                    <div class = "image-row-div">
+                        <img src="../Work-Projects/interactive-map/brain.png">
+                        <div class = "image-row-item">
+                            <p>Brainstorm</p>
+                        </div>
+                    </div>
+                </div>
+                From this brainstorming I came up with three different ideas
+                <ul>
+                    <li>Interactive Map via Application</li>
+                    <li>Interactive Map via Website</li>
+                    <li>Physical Maps</li>
+                </ul>
+                From these ideas I choose the Interactive Map via Website as it had the most versatility when compared to the others. 
+                From here I choose the colour palette can created the icons to represent the type of locations
+                <h4>Colour Palette</h4>
+                <img src="../Work-Projects/interactive-map/colour.png" class="small-img">
+                <h4>Icons</h4>
+                <div class="image-row">
+                    <img src="../Work-Projects/interactive-map/icon1.jpg">
+                    <img src="../Work-Projects/interactive-map/icon2.jpg">
+                    <img src="../Work-Projects/interactive-map/icon3.jpg">
+                    <img src="../Work-Projects/interactive-map/icon4.jpg">
+                    <img src="../Work-Projects/interactive-map/icon5.jpg">
+                </div>
+                Next, I started to wireframe the idea to get the ball rolling.
+                <br>
+                <h4>First wireframes</h4>
+                <br>
+                <img src="../Work-Projects/interactive-map/wireframe1.png" style="width: 100%;">
+                <br>
+                <h4>Second wireframes</h4>
+                <br>
+                <div class="custom-grid">
+                    <img src="../Work-Projects/interactive-map/wireframe2.png" id = "custom1">
+                    <img src="../Work-Projects/interactive-map/wireframe3.png">
+                    <img src="../Work-Projects/interactive-map/wireframe4.png">
+                </div>
+                <h3>Coding Decisions</h3>
+                After the wireframes were created the next step was to figure out a platform that would be best for the interactive map to be hosted and designed on.
+                 For this I decided upon MapBox as it was the most versatile while being easy to understand.
+                The MapBox creation stage was broken into two main steps, placing the locations markers on the map and giving them relevant information. 
+                <br>
+                The relevant information included:
+                <ul>
+                    <li><span>Type</span> – the type of location that it is.</li>
+                    <li><span>Title</span> – the title of the location.</li>
+                    <li><span>Area</span> – the region that the location is in from either North, Inner North, Inner South & South.</li>
+                    <li><span>Description</span> – Short description of the location.</li>
+                    <li><span>Filename</span> – the name of the html file used for coding.</li>
+                </ul>
+                The next step was designing the map was make the icons stand out, as seen below.
+                <img src="../Work-Projects/interactive-map/map.png" style="width: 100%;">
+                <h3>Final Website</h3>
+                Once the mapbox creation was done the final step was creating the website which similar to other projects was through iterations with little documentation.
+                But with that in mind here is the final website.
+                <h3><a href="https://nanoabyss.github.io/DESN3010-Map/">Link</a></h3>
+
             </div>
         </div>
 
@@ -64,10 +119,14 @@
 
 
         <footer class="footer">
-            <a href="mailto:u6671630@anu.edu.au">Contact Me</a>
+            <div class = "footer-icons">
             <a href="https://www.instagram.com/kylerobertson_98/">
                 <img src="../Instagram.svg" class = "insta" alt = "Instagram Logo">
             </a>
+            <a href="https://www.linkedin.com/in/kyle-robertson-80b311235/">
+                <img src="../linkedin.svg" class="insta">
+            </a>
+        </div>
             <div class="footer-links">
                 <a href="../Source-log.html">Source Log</a>
                 <a href="../sitemap.html">Site Map</a>

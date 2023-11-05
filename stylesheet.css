@@ -22,6 +22,10 @@ body{
     background-color: #0A0A0A;
     color: #FAF5EF;
 }
+a:visited{
+    /* color: aqua; */
+}
+
 /*Nav Bar CSS*/
 /*Creating a flex object and centering it via the justify content*/
 .nav{
@@ -177,6 +181,7 @@ textarea{
     height: 4em;
     font-family: myfont, serif;
     font-size: 12px;
+    margin-bottom: 2vh;
 }
 .footer-links{
     /*padding: 1vh;*/
@@ -191,6 +196,12 @@ textarea{
 .footer-links{
     margin-right: 1.5vw;
 }
+.footer-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1vw;
+}
 .insta{
     /*margin-top: 1vh;*/
     width: 1.5vw;
@@ -202,7 +213,16 @@ textarea{
     margin: 0 auto;
     width: 40%;
     font-family: mainfont, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
+.resume-img{
+    width: 60%;
+    margin: 0 auto;
+}
+
 h1,h2,h3,h4,h5{
     font-family: myfont, serif;
 }
@@ -438,7 +458,13 @@ th,tr,table{
     font-size: 20px;
     padding: 1vw;
     background: #FAF5EF;
+    border: 1px black solid;
 }
+
+.small-img{
+    width: 50%;
+}
+
 
 
 
@@ -536,16 +562,125 @@ th,tr,table{
 .image-row{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 1vh;
     width: 50vw;
     justify-content: center; 
+    margin: 1vh 0;
 }
 .image-row img{
         /*Setting size to allow for 2 images in the row*/
-        width: 24.75vw;
+        width: 100%;
         height: auto;
 }
+
+.image-row-div{
+    position: relative;
+    width: 100%;
+}
+.image-row-div-2{
+    position: relative;
+    width: 18vw;
+}
+
+.image-row-div img{
+    height: 100%;
+    margin: 0 !important;
+}
+
+.image-row-item{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    /* width: 100%;
+    height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease;
+}
+.image-row-item:hover{
+    opacity: 1;
+}
+.image-row-item p {
+    color: #0A0A0A;
+    font-size: 20px;
+    padding: 1vw;
+    background: #FAF5EF;
+    border: 1px black solid;
+}
+#nbs-image-row{
+    height: 100vw;
+}
+
+.image-grid{
+    margin: 0 auto;
+    width: 50vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1vh;
+    
+}
+.image-grid img{
+    width: 100% !important;
+}
+.image-grid-div{
+    position: relative;
+    width: 100%;
+}
+#last{
+    grid-column: 1/ span 2;
+}
+.image-grid-div-item{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    /* width: 100%;
+    height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease;
+}
+.image-grid-div-item:hover{
+    opacity: 1;
+}
+.image-grid-div-item p {
+    color: #0A0A0A;
+    font-size: 20px;
+    padding: 1vw;
+    background: #FAF5EF;
+    border: 1px black solid;
+}
+.mobile{
+    height: 50% !important;
+}
+.custom-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 1vh;
+    width: 50vw;
+}
+#custom1{
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.custom-grid img{
+    width: 100% !important;
+}
+
+#chill-spots-image-row{
+    height: 40vh;
+}
+
 .text-row{
     display: flex;
     flex-direction: row;
@@ -555,6 +690,7 @@ th,tr,table{
 }
 #Hummus-Doc{
     text-align:left;
+
 }
 #Hummus-Doc span{
     text-decoration: underline;
@@ -564,6 +700,7 @@ th,tr,table{
 }
 #Hummus-Doc{
     font-family: mainfont, serif;
+    
 }
 #centre{
     text-align: center !important;
